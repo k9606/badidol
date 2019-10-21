@@ -23,8 +23,13 @@ class TopicsController extends Controller
         return view('topics.index', compact('topics'));
     }
 
-    public function show(Topic $topic)
+    public function show(Request $request, Topic $topic)
     {
+        // URL 矫正
+        if (!empty($topic->slug) && $topic->slug != $request->slug) {
+            return redirect($topic->link(), 301);
+        }
+
         return view('topics.show', compact('topic'));
     }
 
