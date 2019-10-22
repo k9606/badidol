@@ -9,8 +9,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'BadIdol') - BadIdol 坏偶像</title>
-    <meta name="description" content="@yield('description', 'BadIdol 坏偶像')"/>
+    <title>@yield('title', 'BadIdol') - {{ setting('site_name', 'BadIdol 坏偶像') }}</title>
+    <meta name="description" content="@yield('description', setting('seo_description', 'BadIdol 坏偶像'))"/>
+    <meta name="keyword" content="@yield('keyword', setting('seo_keyword', 'BadIdol 坏偶像'))"/>
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
