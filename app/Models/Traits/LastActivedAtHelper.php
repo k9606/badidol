@@ -8,12 +8,12 @@ use Carbon\Carbon;
 trait LastActivedAtHelper
 {
     // 缓存相关
-    protected $hash_prefix = 'larabbs_last_actived_at_';
+    protected $hash_prefix = 'badidol_last_actived_at_';
     protected $field_prefix = 'user_';
 
     public function recordLastActivedAt()
     {
-        // 获取今日 Redis 哈希表名称，如：larabbs_last_actived_at_2017-10-21
+        // 获取今日 Redis 哈希表名称，如：badidol_last_actived_at_2017-10-21
         $hash = $this->getHashFromDateString(Carbon::now()->toDateString());
 
         // 字段名称，如：user_1
@@ -28,7 +28,7 @@ trait LastActivedAtHelper
 
     public function syncUserActivedAt()
     {
-        // 获取昨日的哈希表名称，如：larabbs_last_actived_at_2017-10-21
+        // 获取昨日的哈希表名称，如：badidol_last_actived_at_2017-10-21
         $hash = $this->getHashFromDateString(Carbon::yesterday()->toDateString());
 
         // 从 Redis 中获取所有哈希表里的数据
@@ -72,7 +72,7 @@ trait LastActivedAtHelper
 
     public function getHashFromDateString($date)
     {
-        // Redis 哈希表的命名，如：larabbs_last_actived_at_2017-10-21
+        // Redis 哈希表的命名，如：badidol_last_actived_at_2017-10-21
         return $this->hash_prefix . $date;
     }
 

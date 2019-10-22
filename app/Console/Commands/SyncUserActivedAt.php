@@ -7,7 +7,7 @@ use App\Models\User;
 
 class SyncUserActivedAt extends Command
 {
-    protected $signature = 'larabbs:sync-user-actived-at';
+    protected $signature = 'badidol:sync-user-actived-at';
     protected $description = '将用户最后登录时间从 Redis 同步到数据库中';
 
     public function handle(User $user)

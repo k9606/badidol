@@ -21,7 +21,7 @@ trait ActiveUserHelper
     protected $user_number = 6; // 取出来多少用户
 
     // 缓存相关配置
-    protected $cache_key = 'badidol';
+    protected $cache_key = 'badidol_active_users';
     protected $cache_expire_in_seconds = 65 * 60;
 
     public function getActiveUsers()
