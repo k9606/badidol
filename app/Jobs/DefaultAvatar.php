@@ -25,7 +25,15 @@ class DefaultAvatar implements ShouldQueue
 
     public function handle(Pinyin $pinyin)
     {
-        $userName = $pinyin->abbr($this->user->name);
+        $userName = $pinyin->abbr($this->user->name, '', PINYIN_KEEP_ENGLISH);
+
+        if (!$userName) {
+            $userName = $pinyin->abbr($this->user->name, '', PINYIN_KEEP_NUMBER);
+
+            if (!$userName) {
+                $userName = $pinyin->abbr($this->user->name, '', PINYIN_KEEP_PUNCTUATION);
+            }
+        }
 
         $path = '/uploads/images/avatars/' . $this->user->id . '_' . time() . '_' . Str::random(10) . '.' . 'png';
 
