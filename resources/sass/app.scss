@@ -27,10 +27,6 @@ body {
     margin-top: 0px;
 }
 
-.navbar-brand b {
-    color: #f4645f;
-}
-
 /* Sticky footer styles */
 html {
     position: relative;
@@ -43,7 +39,7 @@ body {
 }
 
 .footer {
-    position: fixed;
+    position: fixed; // 临时
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
@@ -164,4 +160,29 @@ body {
     .badge-hint {
         background-color: #d15b47 !important;
     }
+}
+
+/* --- 自定义 --- */
+
+.navbar-static-top {
+    border-top: 4px solid #f4645f;
+}
+
+.navbar-brand b {
+    color: #f4645f;
+}
+
+.my-ui-red-table {
+    border-top-color: #f4645f !important;
+}
+
+.my-btn-success {
+    background-color: #f4645f;
+    border-color: #f4645f;
+}
+
+.nav-link.active {
+    color: #f4645f !important;
+    background-color: #fff !important;
+    border: #f4645f !important;;
 }

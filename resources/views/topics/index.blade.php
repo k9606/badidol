@@ -18,13 +18,25 @@
                         <li class="nav-item">
                             <a class="nav-link {{ active_class( ! if_query('order', 'recent')) }}"
                                href="{{ Request::url() }}?order=default">
-                                最后回复
+                                活跃
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ active_class(if_query('order', 'recent')) }}"
                                href="{{ Request::url() }}?order=recent">
-                                最新发布
+                                精华
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ active_class(if_query('order', '2')) }}"
+                               href="{{ Request::url() }}?order=recent">
+                                最近
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ active_class(if_query('order', '3')) }}"
+                               href="{{ Request::url() }}?order=recent">
+                                零回复
                             </a>
                         </li>
                     </ul>
