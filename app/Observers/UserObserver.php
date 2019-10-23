@@ -2,15 +2,18 @@
 
 namespace App\Observers;
 
+use App\Jobs\DefaultAvatar;
 use App\Models\User;
 
 class UserObserver
 {
-    public function saving(User $user)
+    public function saved(User $user)
     {
-        // 这样写扩展性更高，只有空的时候才指定默认头像
-        if (empty($user->avatar)) {
-            $user->avatar = 'https://cdn.learnku.com/uploads/images/201710/30/1/TrJS40Ey5k.png';
+        // 如果用户没有头像, 生成默认头像
+        if (!$user->avatar) {
+
+            // 推送任务到队列
+            dispatch(new DefaultAvatar($user));
         }
     }
 }
