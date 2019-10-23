@@ -17,6 +17,8 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
+    <link href="https://cdn.staticfile.org/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+
     @yield('styles')
 
 </head>
@@ -43,6 +45,8 @@
 
 <!-- Scripts -->
 <script src="{{ mix('js/app.js') }}"></script>
+
+<script src="https://cdn.staticfile.org/semantic-ui/2.4.1/semantic.js"></script>
 
 @yield('scripts')
 
