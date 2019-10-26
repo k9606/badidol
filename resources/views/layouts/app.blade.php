@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app()->getLocale() }}">
+
 <head>
     <meta charset="utf-8">
-    <title>基于 layui 的极简社区页面模版</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="fly,layui,前端社区">
-    <meta name="description" content="Fly社区是模块化前端UI框架Layui的官网社区，致力于为web开发提供强劲动力">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>@yield('title', 'BadIdol') - {{ setting('site_name', 'BadIdol 坏偶像') }}</title>
+    <meta name="description" content="@yield('description', setting('seo_description', 'BadIdol 坏偶像'))"/>
+    <meta name="keyword"
+          content="@yield('keyword', setting('seo_keyword', 'badidol,坏偶像,bad偶像,坏idol,badaidou,坏aidou,bad爱豆,坏爱豆,bad idol,bad-idol,badidou,坏idou'))"/>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="../res/layui/css/layui.css">
     <link rel="stylesheet" href="../res/css/global.css">
+
+    @yield('styles')
+
 </head>
+
 <body>
 
 @include('layouts._header')
