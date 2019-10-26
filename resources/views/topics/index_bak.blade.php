@@ -13,19 +13,21 @@
             @endif
 
             <div class="card ">
-                <div class="fly-panel-title fly-filter">
-                    <a href="" class="layui-this">综合</a>
-                    <span class="fly-mid"></span>
-                    <a href="">未结</a>
-                    <span class="fly-mid"></span>
-                    <a href="">已结</a>
-                    <span class="fly-mid"></span>
-                    <a href="">精华</a>
-                    <span class="fly-filter-right layui-hide-xs">
-            <a href="{{ Request::url() }}?order=recent" class="layui-this">按最新</a>
-            <span class="fly-mid"></span>
-            <a href="{{ Request::url() }}?order=default">按热议</a>
-          </span>
+                <div class="card-header bg-transparent">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link {{ active_class( ! if_query('order', 'recent')) }}"
+                               href="{{ Request::url() }}?order=default">
+                                最后回复
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ active_class(if_query('order', 'recent')) }}"
+                               href="{{ Request::url() }}?order=recent">
+                                最新发布
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="card-body">
