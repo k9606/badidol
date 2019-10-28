@@ -11,7 +11,7 @@
 
     <title>@yield('title', 'BadIdol') - {{ setting('site_name', 'BadIdol 坏偶像') }}</title>
     <meta name="description" content="@yield('description', setting('seo_description', 'BadIdol 坏偶像'))"/>
-    <meta name="keyword"
+    <meta name="keywords"
           content="@yield('keyword', setting('seo_keyword', 'badidol,坏偶像,bad偶像,坏idol,badaidou,坏aidou,bad爱豆,坏爱豆,bad idol,bad-idol,badidou,坏idou'))"/>
 
     <!-- Styles -->
