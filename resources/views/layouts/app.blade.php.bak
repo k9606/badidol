@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -15,8 +15,7 @@
           content="@yield('keyword', setting('seo_keyword', 'badidol,坏偶像,bad偶像,坏idol,badaidou,坏aidou,bad爱豆,坏爱豆,bad idol,bad-idol,badidou,坏idou'))"/>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../res/layui/css/layui.css">
-    <link rel="stylesheet" href="../res/css/global.css">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     @yield('styles')
 
