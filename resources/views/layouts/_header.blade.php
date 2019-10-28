@@ -1,88 +1,88 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-static-top">
-    <div class="container">
-        <!-- Branding Image -->
-        <a class="navbar-brand " href="{{ url('/') }}">
-            BadIdol
+<div class="fly-header layui-bg-black">
+    <div class="layui-container">
+        <a class="fly-logo" href="/">
+            <img src="../res/images/logo.png" alt="layui">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <ul class="layui-nav fly-nav layui-hide-xs">
+            <li class="layui-nav-item layui-this">
+                <a href="{{ url('/') }}"><i class="iconfont icon-jiaoliu"></i>交流</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="case/case.html"><i class="iconfont icon-iconmingxinganli"></i>案例</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="http://www.layui.com/" target="_blank"><i class="iconfont icon-ui"></i>框架</a>
+            </li>
+        </ul>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item {{ active_class(if_route('topics.index')) }}"><a class="nav-link"
-                                                                                     href="{{ route('topics.index') }}">话题</a>
-                </li>
-                <li class="nav-item {{ category_nav_active(1) }}"><a class="nav-link"
-                                                                     href="{{ route('categories.show', 1) }}">分享</a>
-                </li>
-                <li class="nav-item {{ category_nav_active(2) }}"><a class="nav-link"
-                                                                     href="{{ route('categories.show', 2) }}">教程</a>
-                </li>
-                <li class="nav-item {{ category_nav_active(3) }}"><a class="nav-link"
-                                                                     href="{{ route('categories.show', 3) }}">问答</a>
-                </li>
-                <li class="nav-item {{ category_nav_active(4) }}"><a class="nav-link"
-                                                                     href="{{ route('categories.show', 4) }}">公告</a>
-                </li>
-            </ul>
+        <ul class="layui-nav fly-nav-user">
 
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav navbar-right">
-                <!-- Authentication Links -->
-                @guest
-                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">登录</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">注册</a></li>
-                @else
-                    <li class="nav-item">
-                        <a class="nav-link mt-1 mr-3 font-weight-bold" href="{{ route('topics.create') }}">
-                            <i class="fa fa-plus"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item notification-badge">
-                        <a class="nav-link mr-3 badge badge-pill badge-{{ Auth::user()->notification_count > 0 ? 'hint' : 'secondary' }} text-white"
-                           href="{{ route('notifications.index') }}">
-                            {{ Auth::user()->notification_count }}
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="{{ Auth::user()->avatar }}" class="img-responsive img-circle" width="30px"
-                                 height="30px">
-                            {{ Auth::user()->name }}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @can('manage_contents')
-                                <a class="dropdown-item" href="{{ url(config('administrator.uri')) }}">
-                                    <i class="fas fa-tachometer-alt mr-2"></i>
-                                    管理后台
-                                </a>
-                                <div class="dropdown-divider"></div>
-                            @endcan
-                            <a class="dropdown-item" href="{{ route('users.show', Auth::id()) }}">
-                                <i class="far fa-user mr-2"></i>
-                                个人中心
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('users.edit', Auth::id()) }}">
-                                <i class="far fa-edit mr-2"></i>
-                                编辑资料
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" id="logout" href="#">
+            <!-- 未登入的状态 -->
+            @guest
+                <li class="layui-nav-item">
+                    <a class="iconfont icon-touxiang layui-hide-xs" href="user/login.html"></a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="{{ route('login') }}">登录</a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="{{ route('register') }}">注册</a>
+                </li>
+
+                <!-- 登入后的状态 -->
+            @else
+                <li class="layui-nav-item">
+                    <a class="fly-nav-avatar" href="javascript:;">
+                        <cite class="layui-hide-xs">{{ Auth::user()->name }}</cite>
+                        <i class="layui-badge fly-badge-vip layui-hide-xs">{{ Auth::user()->notification_count }}</i>
+                        <img src="{{ Auth::user()->avatar }}">
+                    </a>
+                    <dl class="layui-nav-child">
+                        @can('manage_contents')
+                            <dd><a href="{{ url(config('administrator.uri')) }}"><i class="layui-icon">&#xe620;</i>管理后台</a>
+                            </dd>
+                        @endcan
+                        <dd><a href="{{ route('users.edit', Auth::id()) }}"><i class="layui-icon">&#xe620;</i>基本设置</a>
+                        </dd>
+                        <dd><a href="{{ route('notifications.index') }}"><i class="iconfont icon-tongzhi"
+                                                                            style="top: 4px;"></i>我的消息</a></dd>
+                        <dd><a href="{{ route('users.show', Auth::id()) }}"><i class="layui-icon"
+                                                                               style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a>
+                        </dd>
+                        <hr style="margin: 5px 0;">
+                        <!--                <dd><a href="#" style="text-align: center;">退出</a></dd>-->
+                        <dd><a href="#" style="text-align: center;">
                                 <form action="{{ route('logout') }}" method="POST"
                                       onsubmit="return confirm('您确定要退出吗？');">
                                     {{ csrf_field() }}
                                     <button class="btn btn-block btn-danger" type="submit" name="button">退出</button>
                                 </form>
-                            </a>
-                        </div>
-                    </li>
-                @endguest
-            </ul>
+                            </a></dd>
+                    </dl>
+                </li>
+            @endguest
+        </ul>
+    </div>
+</div>
+
+<div class="fly-panel fly-column">
+    <div class="layui-container">
+        <ul class="layui-clear">
+            <li class="layui-hide-xs layui-this"><a href="{{ route('topics.index') }}">话题</a></li>
+            <li><a href="{{ route('categories.show', 1) }}">分享</a></li>
+            <li><a href="{{ route('categories.show', 2) }}">教程<span class="layui-badge-dot"></span></a></li>
+            <li><a href="{{ route('categories.show', 3) }}">问答</a></li>
+            <li><a href="{{ route('categories.show', 4) }}">公告</a></li>
+            </li>
+        </ul>
+
+        <div class="fly-column-right layui-hide-xs">
+            <span class="fly-search"><i class="layui-icon"></i></span>
+            <a href="{{ route('topics.create') }}" class="layui-btn">发表新帖</a>
+        </div>
+        <div class="layui-hide-sm layui-show-xs-block"
+             style="margin-top: -10px; padding-bottom: 10px; text-align: center;">
+            <a href="{{ route('topics.create') }}" class="layui-btn">发表新帖</a>
         </div>
     </div>
-</nav>
+</div>
