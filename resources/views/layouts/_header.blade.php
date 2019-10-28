@@ -1,18 +1,18 @@
 <div class="fly-header layui-bg-black">
     <div class="layui-container">
-        <a class="fly-logo" href="/">
+        <a class="fly-logo" href="{{ url('/') }}">
             <img src="../res/images/logo.png" alt="layui">
         </a>
         <ul class="layui-nav fly-nav layui-hide-xs">
             <li class="layui-nav-item layui-this">
                 <a href="{{ url('/') }}"><i class="iconfont icon-jiaoliu"></i>交流</a>
             </li>
-            <li class="layui-nav-item">
-                <a href="case/case.html"><i class="iconfont icon-iconmingxinganli"></i>案例</a>
-            </li>
-            <li class="layui-nav-item">
-                <a href="http://www.layui.com/" target="_blank"><i class="iconfont icon-ui"></i>框架</a>
-            </li>
+            {{--            <li class="layui-nav-item">--}}
+            {{--                <a href="case/case.html"><i class="iconfont icon-iconmingxinganli"></i>案例</a>--}}
+            {{--            </li>--}}
+            {{--            <li class="layui-nav-item">--}}
+            {{--                <a href="http://www.layui.com/" target="_blank"><i class="iconfont icon-ui"></i>框架</a>--}}
+            {{--            </li>--}}
         </ul>
 
         <ul class="layui-nav fly-nav-user">
@@ -20,7 +20,7 @@
             <!-- 未登入的状态 -->
             @guest
                 <li class="layui-nav-item">
-                    <a class="iconfont icon-touxiang layui-hide-xs" href="user/login.html"></a>
+                    <a class="iconfont icon-touxiang layui-hide-xs" href="{{ route('login') }}"></a>
                 </li>
                 <li class="layui-nav-item">
                     <a href="{{ route('login') }}">登录</a>
@@ -50,14 +50,7 @@
                                                                                style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a>
                         </dd>
                         <hr style="margin: 5px 0;">
-                        <!--                <dd><a href="#" style="text-align: center;">退出</a></dd>-->
-                        <dd><a href="#" style="text-align: center;">
-                                <form action="{{ route('logout') }}" method="POST"
-                                      onsubmit="return confirm('您确定要退出吗？');">
-                                    {{ csrf_field() }}
-                                    <button class="btn btn-block btn-danger" type="submit" name="button">退出</button>
-                                </form>
-                            </a></dd>
+                        <dd><a href="{{ route('logout') }}" style="text-align: center;">退出</a></dd>
                     </dl>
                 </li>
             @endguest
@@ -68,9 +61,10 @@
 <div class="fly-panel fly-column">
     <div class="layui-container">
         <ul class="layui-clear">
-            <li class="layui-hide-xs layui-this"><a href="{{ route('topics.index') }}">话题</a></li>
+            <li class="layui-hide-xs layui-this"><a href="{{ route('topics.index') }}">话题<span
+                        class="layui-badge-dot"></span></a></li>
             <li><a href="{{ route('categories.show', 1) }}">分享</a></li>
-            <li><a href="{{ route('categories.show', 2) }}">教程<span class="layui-badge-dot"></span></a></li>
+            <li><a href="{{ route('categories.show', 2) }}">教程</a></li>
             <li><a href="{{ route('categories.show', 3) }}">问答</a></li>
             <li><a href="{{ route('categories.show', 4) }}">公告</a></li>
             </li>
