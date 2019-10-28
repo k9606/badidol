@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -15,44 +15,37 @@
           content="@yield('keyword', setting('seo_keyword', 'badidol,坏偶像,bad偶像,坏idol,badaidou,坏aidou,bad爱豆,坏爱豆,bad idol,bad-idol,badidou,坏idou'))"/>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="../res/layui/css/layui.css">
-    <link rel="stylesheet" href="../res/css/global.css">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     @yield('styles')
 
 </head>
 
 <body>
+<div id="app" class="{{ route_class() }}-page">
 
-@include('layouts._header')
+    @include('layouts._header')
 
-<div class="layui-container">
+    <div class="container">
 
-    @include('shared._messages')
+        @include('shared._messages')
 
-    @yield('content')
+        @yield('content')
 
+    </div>
+
+    @include('layouts._footer')
 </div>
 
-@include('layouts._footer')
+@if (app()->isLocal())
+    @include('sudosu::user-selector')
+@endif
 
-<script src="../res/layui/layui.js"></script>
-<script>
-    layui.cache.page = '';
-    layui.cache.user = {
-        username: '游客'
-        , uid: -1
-        , avatar: '../res/images/avatar/00.jpg'
-        , experience: 83
-        , sex: '男'
-    };
-    layui.config({
-        version: "3.0.0"
-        , base: '../res/mods/' //这里实际使用时，建议改成绝对路径
-    }).extend({
-        fly: 'index'
-    }).use('fly');
-</script>
+<!-- Scripts -->
+<script src="{{ mix('js/app.js') }}"></script>
+
+@yield('scripts')
 
 </body>
+
 </html>
