@@ -1,7 +1,8 @@
 <div class="fly-header layui-bg-black">
     <div class="layui-container">
         <a class="fly-logo" href="{{ url('/') }}">
-            <img src="{{ asset('res/images/logo.png') }}" alt="BadIdol">
+            {{--            <img src="{{ asset('res/images/logo.png') }}" alt="BadIdol">--}}
+            <span style="font-size: 34px; color: #009688;">Bad</span><span style="font-size: 34px; color: #c2c2c2;">Idol</span>
         </a>
         <ul class="layui-nav fly-nav layui-hide-xs">
             <li class="layui-nav-item layui-this">

@@ -56,7 +56,7 @@
 </div>
 
 <div class="fly-panel" style="padding: 20px 0; text-align: center;">
-    <img src="../../res/images/weixin.jpg" style="max-width: 100%;" alt="layui">
+    <img src="http://www.ooxoo.net/data/attachment/portal/201208/01/100502zzkpckkvkr1veecl.jpg" style="max-width: 100%;" alt="layui">
     <p style="position: relative; color: #666;">微信扫码关注 BadIdol 公众号</p>
 </div>
 
