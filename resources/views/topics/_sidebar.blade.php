@@ -51,7 +51,13 @@
     </div>
     <div class="fly-panel-main">
         <a href="#" target="_blank" class="fly-zanzhu" style="background-color: #5FB878;">BadIdol 坏偶像</a>
+        <a href="" target="_blank" class="fly-zanzhu" style="background-color: #393D49;">虚席以待</a>
     </div>
+</div>
+
+<div class="fly-panel" style="padding: 20px 0; text-align: center;">
+    <img src="../../res/images/weixin.jpg" style="max-width: 100%;" alt="layui">
+    <p style="position: relative; color: #666;">微信扫码关注 BadIdol 公众号</p>
 </div>
 
 <div class="fly-panel fly-link">
