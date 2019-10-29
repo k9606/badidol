@@ -15,7 +15,6 @@
           content="@yield('keyword', setting('seo_keyword', 'badidol,坏偶像,bad偶像,坏idol,badaidou,坏aidou,bad爱豆,坏爱豆,bad idol,bad-idol,badidou,坏idou'))"/>
 
     <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('res/layui/css/layui.css') }}">
     <link rel="stylesheet" href="{{ asset('res/css/global.css') }}">
 
@@ -24,27 +23,24 @@
 </head>
 
 <body>
-<div id="app" class="{{ route_class() }}-page">
 
-    @include('layouts._header')
+@include('layouts._header')
 
-    <div class="container">
+<div class="layui-container">
 
-        @include('shared._messages')
+    @include('shared._messages')
 
-        @yield('content')
+    @yield('content')
 
-    </div>
-
-    @include('layouts._footer')
 </div>
+
+@include('layouts._footer')
 
 @if (app()->isLocal())
     @include('sudosu::user-selector')
 @endif
 
 <!-- Scripts -->
-<script src="{{ mix('js/app.js') }}"></script>
 <script src="{{ asset('res/layui/layui.js') }}"></script>
 <script>
     layui.cache.page = '';

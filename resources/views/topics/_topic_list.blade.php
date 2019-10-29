@@ -1,55 +1,39 @@
 @if (count($topics))
-    <ul class="list-unstyled">
+    <ul class="fly-list">
         @foreach ($topics as $topic)
-            <li class="media">
-                <div class="media-left">
-                    <a href="{{ route('users.show', [$topic->user_id]) }}">
-                        <img class="media-object img-thumbnail mr-3" style="width: 52px; height: 52px;"
-                             src="{{ $topic->user->avatar }}" title="{{ $topic->user->name }}">
+            <li>
+                <a href="{{ route('users.show', [$topic->user_id]) }}" class="fly-avatar">
+                    <img src="{{ $topic->user->avatar }}"
+                         alt="{{ $topic->user->name }}">
+                </a>
+                <h2>
+                    <a class="layui-badge">{{ $topic->category->name }}</a>
+                    <a href="{{ $topic->link() }}">{{ $topic->title }}</a>
+                </h2>
+                <div class="fly-list-info">
+                    <a href="{{ route('users.show', [$topic->user_id]) }}" link>
+                        <cite>{{ $topic->user->name }}</cite>
+                        <!--
+                        <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
+                        <i class="layui-badge fly-badge-vip">VIP3</i>
+                        -->
                     </a>
+                    <span>{{ $topic->updated_at->diffForHumans() }}</span>
+
+                    <!--                            <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span>-->
+                    <!--<span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>-->
+                    <span class="fly-list-nums">
+                <i class="iconfont icon-pinglun1" title="回答"></i> {{ $topic->reply_count }}
+              </span>
                 </div>
-
-                <div class="media-body">
-
-                    <div class="media-heading mt-0 mb-1">
-                        <a href="{{ $topic->link() }}" title="{{ $topic->title }}">
-                            {{ $topic->title }}
-                        </a>
-                        <a class="float-right" href="{{ $topic->link() }}">
-                            <span class="badge badge-secondary badge-pill"> {{ $topic->reply_count }} </span>
-                        </a>
-                    </div>
-
-                    <small class="media-body meta text-secondary">
-
-                        <a class="text-secondary" href="{{ route('categories.show', $topic->category_id) }}"
-                           title="{{ $topic->category->name }}">
-                            <i class="far fa-folder"></i>
-                            {{ $topic->category->name }}
-                        </a>
-
-                        <span> • </span>
-                        <a class="text-secondary" href="{{ route('users.show', [$topic->user_id]) }}"
-                           title="{{ $topic->user->name }}">
-                            <i class="far fa-user"></i>
-                            {{ $topic->user->name }}
-                        </a>
-                        <span> • </span>
-                        <i class="far fa-clock"></i>
-                        <span class="timeago"
-                              title="最后活跃于：{{ $topic->updated_at }}">{{ $topic->updated_at->diffForHumans() }}</span>
-                    </small>
-
+                <div class="fly-list-badge">
+                {{--                    <span class="layui-badge layui-bg-black">置顶</span>--}}
+                <!--<span class="layui-badge layui-bg-red">精帖</span>-->
                 </div>
             </li>
-
-            @if ( ! $loop->last)
-                <hr>
-            @endif
-
         @endforeach
     </ul>
 
 @else
-    <div class="empty-block">暂无数据 ~_~</div>
+    <div class="fly-none">没有相关数据</div>
 @endif
