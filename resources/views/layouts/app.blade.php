@@ -16,8 +16,8 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="../res/layui/css/layui.css">
-    <link rel="stylesheet" href="../res/css/global.css">
+    <link rel="stylesheet" href="{{ asset('res/layui/css/layui.css') }}">
+    <link rel="stylesheet" href="{{ asset('res/css/global.css') }}">
 
     @yield('styles')
 
@@ -45,19 +45,19 @@
 
 <!-- Scripts -->
 <script src="{{ mix('js/app.js') }}"></script>
-<script src="../res/layui/layui.js"></script>
+<script src="{{ asset('res/layui/layui.js') }}"></script>
 <script>
     layui.cache.page = '';
     layui.cache.user = {
         username: '游客'
         , uid: -1
-        , avatar: '../res/images/avatar/00.jpg'
+        , avatar: "{{ asset('res/images/avatar/00.jpg') }}"
         , experience: 83
         , sex: '男'
     };
     layui.config({
         version: "3.0.0"
-        , base: '../res/mods/' //这里实际使用时，建议改成绝对路径
+        , base: "{{ asset('res/mods') }}/" //这里实际使用时，建议改成绝对路径
     }).extend({
         fly: 'index'
     }).use('fly');
