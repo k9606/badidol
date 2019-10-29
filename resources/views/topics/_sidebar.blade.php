@@ -5,7 +5,7 @@
             <!--<i class="layui-icon fly-loading">&#xe63d;</i>-->
             @foreach ($active_users as $active_user)
                 <dd>
-                    <a href="user/home.html">
+                    <a href="{{ route('users.show', $active_user->id) }}">
                         <img
                             src="{{ $active_user->avatar }}"><cite>{{ $active_user->name }}</cite><i>106次回答</i>
                     </a>
