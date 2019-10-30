@@ -4,7 +4,7 @@
             <li>
                 <a href="{{ route('users.show', [$topic->user_id]) }}" class="fly-avatar">
                     <img src="{{ $topic->user->avatar }}"
-                         alt="{{ $topic->user->name }}">
+                         alt="{{ $topic->user->name }}" class="bi-avatar">
                 </a>
                 <h2>
                     <a class="layui-badge">{{ $topic->category->name }}</a>

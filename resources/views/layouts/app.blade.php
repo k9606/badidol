@@ -17,6 +17,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('res/layui/css/layui.css') }}">
     <link rel="stylesheet" href="{{ asset('res/css/global.css') }}">
+    <link rel="stylesheet" href="{{ asset('res/css/badidol.css') }}">
 
     @yield('styles')
 

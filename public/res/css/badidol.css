@@ -1,0 +1,13 @@
+.bi-logo-left {
+    font-size: 32px;
+    color: #009688;
+}
+
+.bi-logo-right {
+    font-size: 25px;
+    color: #c2c2c2;
+}
+
+.bi-avatar {
+    border-radius: 100% !important;
+}
