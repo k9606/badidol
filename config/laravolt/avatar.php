@@ -28,7 +28,7 @@ return [
     'ascii'    => false,
 
     // Image shape: circle or square
-    'shape' => 'circle',
+    'shape' => 'square',
 
     // Image width, in pixel
     'width'    => 100,
