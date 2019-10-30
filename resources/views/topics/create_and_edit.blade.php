@@ -54,9 +54,9 @@
                                             </div>
                                             <div class="layui-form-item layui-form-text">
                                                 <div class="layui-input-block">
-                                    <textarea id="L_content" name="body" required lay-verify="required"
-                                              placeholder="详细描述" class="layui-textarea fly-editor"
-                                              style="height: 260px;">{{ old('body', $topic->body ) }}</textarea>
+                                    <textarea name="body" class="form-control" id="editor" rows="6"
+                                              placeholder="请填入至少三个字符的内容。"
+                                              required>{{ old('body', $topic->body ) }}</textarea>
                                                 </div>
                                             </div>
                                             <div class="layui-form-item">
@@ -77,6 +77,7 @@
 @stop
 
 @section('scripts')
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('js/module.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/hotkeys.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/uploader.min.js') }}"></script>
