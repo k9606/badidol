@@ -44,7 +44,14 @@
                                                                                style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a>
                         </dd>
                         <hr style="margin: 5px 0;">
-                        <dd><a href="{{ route('logout') }}" style="text-align: center;">退出</a></dd>
+                        <dd><a href="#" style="text-align: center;">
+                                <form action="{{ route('logout') }}" method="POST"
+                                      onsubmit="return confirm('您确定要退出吗？');">
+                                    {{ csrf_field() }}
+                                    <button class="layui-btn layui-btn-sm layui-btn-danger" type="submit" name="button">退出</button>
+                                </form>
+                            </a>
+                        </dd>
                     </dl>
                 </li>
             @endguest
