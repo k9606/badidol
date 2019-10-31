@@ -33,15 +33,14 @@
                     </a>
                     <dl class="layui-nav-child">
                         @can('manage_contents')
-                            <dd><a href="{{ url(config('administrator.uri')) }}"><i class="layui-icon">&#xe620;</i>管理后台</a>
+                            <dd><a href="{{ url(config('administrator.uri')) }}"><i class="layui-icon">&#xe617;</i>管理后台</a>
                             </dd>
                         @endcan
-                        <dd><a href="{{ route('users.edit', Auth::id()) }}"><i class="layui-icon">&#xe620;</i>基本设置</a>
+                        <dd><a href="{{ route('notifications.index') }}"><i class="layui-icon ">&#xe63a;</i>我的消息</a>
                         </dd>
-                        <dd><a href="{{ route('notifications.index') }}"><i class="iconfont icon-tongzhi"
-                                                                            style="top: 4px;"></i>我的消息</a></dd>
-                        <dd><a href="{{ route('users.show', Auth::id()) }}"><i class="layui-icon"
-                                                                               style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a>
+                        <dd><a href="{{ route('users.edit', Auth::id()) }}"><i class="layui-icon">&#xe716;</i>编辑资料</a>
+                        </dd>
+                        <dd><a href="{{ route('users.show', Auth::id()) }}"><i class="layui-icon">&#xe664;</i>个人中心</a>
                         </dd>
                         <hr style="margin: 5px 0;">
                         <dd><a href="#" style="text-align: center;">
