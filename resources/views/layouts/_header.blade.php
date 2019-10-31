@@ -28,7 +28,7 @@
                 <li class="layui-nav-item">
                     <a class="fly-nav-avatar" href="javascript:;">
                         <cite class="layui-hide-xs">{{ Auth::user()->name }}</cite>
-                        <i class="layui-badge fly-badge-vip layui-hide-xs">{{ Auth::user()->notification_count }}</i>
+                        <i class="layui-badge fly-badge-vip layui-hide-xs layui-bg-{{ Auth::user()->notification_count > 0 ? 'red' : 'green' }}">{{ Auth::user()->notification_count }}</i>
                         <img src="{{ Auth::user()->avatar }}">
                     </a>
                     <dl class="layui-nav-child">
