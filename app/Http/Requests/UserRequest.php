@@ -16,8 +16,8 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => 'required|string|between:3,25|regex:/^[\x7f-\xffA-Za-z0-9\s]+$/|unique:users,name,' . Auth::id(),
-            'email' => 'required|string|email|max:255|unique:users,email,' . Auth::id(),
-            'introduction' => 'max:80',
+            'email' => 'required|string|email|max:100|unique:users,email,' . Auth::id(),
+            'introduction' => 'max:100',
             'avatar' => 'mimes:jpeg,bmp,png,gif|dimensions:min_width=100,min_height=100',
         ];
     }
