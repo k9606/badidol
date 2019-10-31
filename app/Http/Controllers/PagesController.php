@@ -18,6 +18,6 @@ class PagesController extends Controller
             return redirect(url(config('administrator.uri')), 302);
         }
         // 否则使用视图
-        return view('pages.permission_denied');
+        return view('auth.permission_denied');
     }
 }

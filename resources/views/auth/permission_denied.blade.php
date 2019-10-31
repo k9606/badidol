@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('auth.layouts.app')
 @section('title', '无权限访问')
 
 @section('content')
@@ -14,7 +14,7 @@
                         请登录以后再操作
                     </div>
 
-                    <a class="btn btn-lg btn-primary btn-block" href="{{ route('login') }}">
+                    <a class="layui-btn btn-block" href="{{ route('login') }}">
                         <i class="fas fa-sign-in-alt"></i>
                         登 录
                     </a>
