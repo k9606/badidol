@@ -60,7 +60,7 @@
                                                 </div>
                                             </div>
                                             <div class="layui-form-item">
-                                                <button class="layui-btn" lay-filter="*" lay-submit>立即发布</button>
+                                                <button class="layui-btn" type="submit">立即发布</button>
                                             </div>
                                         </form>
                         </div>
