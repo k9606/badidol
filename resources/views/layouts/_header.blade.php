@@ -1,19 +1,12 @@
 <div class="fly-header layui-bg-black">
     <div class="layui-container">
         <a class="fly-logo" href="{{ url('/') }}">
-            {{--            <img src="{{ asset('res/images/logo.png') }}" alt="BadIdol">--}}
             <span class="bi-logo-left">Bad</span><span class="bi-logo-right">Idol</span>
         </a>
         <ul class="layui-nav fly-nav layui-hide-xs">
             <li class="layui-nav-item layui-this">
                 <a href="{{ url('/') }}"><i class="iconfont icon-jiaoliu"></i>交流</a>
             </li>
-            {{--            <li class="layui-nav-item">--}}
-            {{--                <a href="case/case.html"><i class="iconfont icon-iconmingxinganli"></i>案例</a>--}}
-            {{--            </li>--}}
-            {{--            <li class="layui-nav-item">--}}
-            {{--                <a href="http://www.layui.com/" target="_blank"><i class="iconfont icon-ui"></i>框架</a>--}}
-            {{--            </li>--}}
         </ul>
 
         <ul class="layui-nav fly-nav-user">
