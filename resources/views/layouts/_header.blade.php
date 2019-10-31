@@ -75,9 +75,5 @@
             <span class="fly-search"><i class="layui-icon"></i></span>
             <a href="{{ route('topics.create') }}" class="layui-btn">发表新帖</a>
         </div>
-        <div class="layui-hide-sm layui-show-xs-block"
-             style="margin-top: -10px; padding-bottom: 10px; text-align: center;">
-            <a href="{{ route('topics.create') }}" class="layui-btn">发表新帖</a>
-        </div>
     </div>
 </div>
