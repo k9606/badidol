@@ -17,9 +17,9 @@
                     <span class="fly-mid"></span>
                     <a href="">精华</a>
                     <span class="fly-filter-right layui-hide-xs">
-                        <a href="{{ Request::url() }}?order=default" class="layui-this">最后回复</a>
+                        <a href="{{ Request::url() }}?order=default" class="{{ active_class( ! if_query('order', 'recent')) ? 'layui-this' : '' }}">最后回复</a>
                     <span class="fly-mid"></span>
-                        <a href="{{ Request::url() }}?order=recent">最新发布</a>
+                        <a href="{{ Request::url() }}?order=recent" class="{{ active_class(if_query('order', 'recent')) ? 'layui-this' : '' }}">最新发布</a>
                     </span>
                 </div>
 
