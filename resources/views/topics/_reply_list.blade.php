@@ -11,6 +11,7 @@
                 <div class="fly-detail-user">
                     <a href="{{ route('users.show', [$reply->user_id]) }}" class="fly-link">
                         <cite>{{ $reply->user->name }}</cite>
+                        <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
                     </a>
                     <!--
                     <span style="color:#5FB878">(管理员)</span>
@@ -37,8 +38,15 @@
               </span>
                 @can('destroy', $reply)
                     <div class="jieda-admin">
-                        <span type="del">删除</span>
-                        <!-- <span class="jieda-accept" type="accept">采纳</span> -->
+                        <form action="{{ route('replies.destroy', $reply->id) }}"
+                              onsubmit="return confirm('确定要删除此评论？');"
+                              method="post">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                            <button type="submit" class="layui-btn layui-btn-xs jie-admin">
+                                删除
+                            </button>
+                        </form>
                     </div>
                 @endcan
             </div>
