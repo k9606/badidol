@@ -71,5 +71,8 @@
             </div>
 
         </div>
+        <div class="layui-col-md4">
+            @include('topics._sidebar')
+        </div>
     </div>
 @stop

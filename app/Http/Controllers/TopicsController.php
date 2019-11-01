@@ -30,14 +30,16 @@ class TopicsController extends Controller
         return view('topics.index', compact('topics', 'active_users', 'links'));
     }
 
-    public function show(Request $request, Topic $topic)
+    public function show(Request $request, Topic $topic, User $user, Link $link)
     {
         // URL 矫正
         if (!empty($topic->slug) && $topic->slug != $request->slug) {
             return redirect($topic->link(), 301);
         }
+        $active_users = $user->getActiveUsers();
+        $links = $link->getAllCached();
 
-        return view('topics.show', compact('topic'));
+        return view('topics.show', compact('topic', 'active_users', 'links'));
     }
 
     public function create(Topic $topic)
