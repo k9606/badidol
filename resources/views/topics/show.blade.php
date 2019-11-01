@@ -49,7 +49,7 @@
                                   onsubmit="return confirm('您确定要删除吗？');">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <button type="submit" class="layui-btn layui-btn-xs jie-admin">
+                                <button type="submit" class="layui-btn layui-btn-xs jie-admin layui-btn-danger">
                                     删除
                                 </button>
                             </form>
