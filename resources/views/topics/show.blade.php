@@ -18,7 +18,7 @@
 
                     <span class="layui-badge layui-bg-black">置顶</span>
                     <span class="layui-badge layui-bg-red">精帖</span>
-                    
+
                     <span class="fly-list-nums">
             <a href="#comment"><i class="iconfont" title="回答">&#xe60c;</i> {{ $topic->reply_count }}</a>
             <i class="iconfont" title="人气">&#xe60b;</i> 99999
@@ -39,10 +39,20 @@
                     <div class="detail-hits" id="LAY_jieAdmin" data-id="123">
                         <span style="padding-right: 10px; color: #FF7200">暂无签名</span>
                         @can('update', $topic)
-                            <span class="layui-btn layui-btn-xs jie-admin" type="edit"><a
-                                    href="{{ route('topics.edit', $topic->id) }}">编辑</a></span>
-                            <span class="layui-btn layui-btn-xs jie-admin" type="del"><a
-                                    href="{{ route('topics.destroy', $topic->id) }}">删除</a></span>
+                            <span>
+                                <button class="layui-btn layui-btn-xs jie-admin">
+                                    <a href="{{ route('topics.edit', $topic->id) }}">编辑</a>
+                                </button>
+                            </span>
+                            <form action="{{ route('topics.destroy', $topic->id) }}" method="post"
+                                  style="display: inline-block;"
+                                  onsubmit="return confirm('您确定要删除吗？');">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+                                <button type="submit" class="layui-btn layui-btn-xs jie-admin">
+                                    删除
+                                </button>
+                            </form>
                         @endcan
                     </div>
                 </div>
