@@ -75,9 +75,9 @@
 
 @section('scripts')
     <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ asset('js/module.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/hotkeys.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/uploader.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('res/mods/module.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('res/mods/hotkeys.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('res/mods/uploader.js') }}"></script>
     <script type="text/javascript" src="https://cdn.staticfile.org/simditor/2.3.28/lib/simditor.min.js"></script>
 
     <script>
