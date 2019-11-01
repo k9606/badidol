@@ -28,6 +28,7 @@
                 <li class="layui-nav-item">
                     <a class="fly-nav-avatar" href="javascript:;">
                         <cite class="layui-hide-xs">{{ Auth::user()->name }}</cite>
+                        <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：xxx"></i>
                         <i class="layui-badge fly-badge-vip layui-hide-xs">{{ Auth::user()->notification_count }}</i>
                         <img src="{{ Auth::user()->avatar }}">
                     </a>
@@ -62,7 +63,7 @@
     <div class="layui-container">
         <ul class="layui-clear">
             <li class="{{ active_class(if_route('topics.index')) ? 'layui-this' : '' }}"><a href="{{ route('topics.index') }}">话题</a></li>
-            <li class="{{ category_nav_active(1) }}"><a href="{{ route('categories.show', 1) }}">分享</a></li>
+            <li class="{{ category_nav_active(1) }}"><a href="{{ route('categories.show', 1) }}">分享<span class="layui-badge-dot"></a></li>
             <li class="{{ category_nav_active(2) }}"><a href="{{ route('categories.show', 2) }}">教程</a></li>
             <li class="{{ category_nav_active(3) }}"><a href="{{ route('categories.show', 3) }}">问答</a></li>
             <li class="{{ category_nav_active(4) }}"><a href="{{ route('categories.show', 4) }}">公告</a></li>

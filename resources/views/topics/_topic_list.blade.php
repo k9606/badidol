@@ -13,6 +13,7 @@
                 <div class="fly-list-info">
                     <a href="{{ route('users.show', [$topic->user_id]) }}" link>
                         <cite>{{ $topic->user->name }}</cite>
+                        <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
                         <!--
                         <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
                         <i class="layui-badge fly-badge-vip">VIP3</i>
