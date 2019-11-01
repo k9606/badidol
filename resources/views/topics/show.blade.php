@@ -18,23 +18,10 @@
 
                     <span class="layui-badge layui-bg-black">置顶</span>
                     <span class="layui-badge layui-bg-red">精帖</span>
-
-                    @can('update', $topic)
-                        <div class="fly-admin-box" data-id="123">
-                            <span class="layui-btn layui-btn-xs jie-admin" type="del"><a
-                                    href="{{ route('topics.edit', $topic->id) }}">删除</a></span>
-                            <span class="layui-btn layui-btn-xs jie-admin" type="del"><a
-                                    href="{{ route('topics.destroy', $topic->id) }}">删除</a></span>
-
-                            <span class="layui-btn layui-btn-xs jie-admin" type="set" field="stick" rank="1">置顶</span>
-                            <!-- <span class="layui-btn layui-btn-xs jie-admin" type="set" field="stick" rank="0" style="background-color:#ccc;">取消置顶</span> -->
-
-                            <span class="layui-btn layui-btn-xs jie-admin" type="set" field="status" rank="1">加精</span>
-                            <!-- <span class="layui-btn layui-btn-xs jie-admin" type="set" field="status" rank="0" style="background-color:#ccc;">取消加精</span> -->
-                        </div>
-                    @endcan
+                    
                     <span class="fly-list-nums">
             <a href="#comment"><i class="iconfont" title="回答">&#xe60c;</i> {{ $topic->reply_count }}</a>
+            <i class="iconfont" title="人气">&#xe60b;</i> 99999
           </span>
                 </div>
                 <div class="detail-about">
@@ -45,6 +32,7 @@
                     <div class="fly-detail-user">
                         <a href="{{ route('users.show', $topic->user->id) }}" class="fly-link">
                             <cite>{{ $topic->user->name }}</cite>
+                            <i class="iconfont icon-renzheng" title="认证信息：xxx"></i>
                         </a>
                         <span>{{ $topic->created_at->diffForHumans() }}</span>
                     </div>
@@ -52,7 +40,9 @@
                         <span style="padding-right: 10px; color: #FF7200">暂无签名</span>
                         @can('update', $topic)
                             <span class="layui-btn layui-btn-xs jie-admin" type="edit"><a
-                                    href="{{ route('topics.edit', $topic->id) }}">编辑此贴</a></span>
+                                    href="{{ route('topics.edit', $topic->id) }}">编辑</a></span>
+                            <span class="layui-btn layui-btn-xs jie-admin" type="del"><a
+                                    href="{{ route('topics.destroy', $topic->id) }}">删除</a></span>
                         @endcan
                     </div>
                 </div>
