@@ -13,7 +13,7 @@
         <div class="layui-form-item">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="topic_id" value="{{ $topic->id }}">
-            <button class="layui-btn" lay-filter="*" lay-submit>提交回复</button>
+            <button type="submit" class="layui-btn">提交回复</button>
         </div>
     </form>
 </div>
