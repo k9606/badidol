@@ -19,7 +19,8 @@
                     <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
                         <div class="layui-tab-item layui-show">
                             @if($topic->id)
-                                <form action="{{ route('topics.update', $topic->id) }}" method="POST" accept-charset="UTF-8">
+                                <form action="{{ route('topics.update', $topic->id) }}" method="POST"
+                                      accept-charset="UTF-8">
                                     <input type="hidden" name="_method" value="PUT">
                                     @else
                                         <form action="{{ route('topics.store') }}" method="POST" accept-charset="UTF-8">
@@ -32,11 +33,14 @@
                                                 <div class="layui-col-md3">
                                                     <label class="layui-form-label">所在分类</label>
                                                     <div class="layui-input-block">
-                                                        <select lay-verify="required" name="category_id" lay-filter="column">
-                                                            <option value="" hidden disabled {{ $topic->id ? '' : 'selected' }}>请选择分类
+                                                        <select lay-verify="required" name="category_id"
+                                                                lay-filter="column">
+                                                            <option value="" hidden
+                                                                    disabled {{ $topic->id ? '' : 'selected' }}>请选择分类
                                                             </option>
                                                             @foreach ($categories as $value)
-                                                                <option value="{{ $value->id }}" {{ $topic->category_id == $value->id ? 'selected' : '' }}>{{ $value->name }}</option>
+                                                                <option
+                                                                    value="{{ $value->id }}" {{ $topic->category_id == $value->id ? 'selected' : '' }}>{{ $value->name }}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
@@ -44,8 +48,10 @@
                                                 <div class="layui-col-md9">
                                                     <label for="L_title" class="layui-form-label">标题</label>
                                                     <div class="layui-input-block">
-                                                        <input type="text" id="L_title" name="title" required lay-verify="required"
-                                                               autocomplete="off" class="layui-input" value="{{ old('title', $topic->title ) }}">
+                                                        <input type="text" id="L_title" name="title" required
+                                                               lay-verify="required"
+                                                               autocomplete="off" class="layui-input"
+                                                               value="{{ old('title', $topic->title ) }}">
                                                     </div>
                                                 </div>
                                             </div>
