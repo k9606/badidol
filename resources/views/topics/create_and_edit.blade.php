@@ -71,6 +71,7 @@
 
 @section('styles')
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/simditor/2.3.28/styles/simditor.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('res/css/simditor-emoji.css') }}">
 @stop
 
 @section('scripts')
@@ -79,6 +80,7 @@
     <script type="text/javascript" src="{{ asset('res/mods/hotkeys.js') }}"></script>
     <script type="text/javascript" src="{{ asset('res/mods/uploader.js') }}"></script>
     <script type="text/javascript" src="https://cdn.staticfile.org/simditor/2.3.28/lib/simditor.min.js"></script>
+    <script type="text/javascript" src="{{ asset('res/mods/simditor-emoji.js') }}"></script>
 
     <script>
         $(document).ready(function () {
@@ -94,6 +96,30 @@
                     leaveConfirm: '文件上传中，关闭此页面将取消上传。'
                 },
                 pasteImage: true,
+                toolbar: [
+                    'emoji',
+                    'title',
+                    'bold',
+                    'italic',
+                    'underline',
+                    'strikethrough',
+                    'fontScale',
+                    'color',
+                    'ol',
+                    'ul',
+                    'blockquote',
+                    'code',
+                    'table',
+                    'link',
+                    'image',
+                    'hr',
+                    'indent',
+                    'outdent',
+                    'alignment',
+                ],
+                emoji: {
+                    imagePath: "{{ asset('res/emoji/') }}",
+                }
             });
         });
     </script>
