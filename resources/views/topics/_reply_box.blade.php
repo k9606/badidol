@@ -5,9 +5,7 @@
         <div class="layui-form-item layui-form-text">
             <a name="comment"></a>
             <div class="layui-input-block">
-                                <textarea id="L_content" name="content" required lay-verify="required"
-                                          placeholder="请输入内容" class="layui-textarea fly-editor"
-                                          style="height: 150px;"></textarea>
+                <textarea name="content" id="editor" placeholder="请输入内容" required></textarea>
             </div>
         </div>
         <div class="layui-form-item">
@@ -17,3 +15,29 @@
         </div>
     </form>
 </div>
+
+@section('styles')
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/simditor/2.3.28/styles/simditor.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('res/css/simditor-emoji.css') }}">
+@stop
+
+@section('scripts')
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('res/mods/module.js') }}"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/simditor/2.3.28/lib/simditor.min.js"></script>
+    <script type="text/javascript" src="{{ asset('res/mods/simditor-emoji.js') }}"></script>
+
+    <script>
+        $(document).ready(function () {
+            var editor = new Simditor({
+                textarea: $('#editor'),
+                toolbar: [
+                    'emoji',
+                ],
+                emoji: {
+                    imagePath: "{{ asset('res/emoji/') }}",
+                }
+            });
+        });
+    </script>
+@stop

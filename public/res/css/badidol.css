@@ -22,3 +22,7 @@
 .simditor-body img {
     max-width: 100%;
 }
+
+.simditor-wrapper {
+    height: 150px !important;
+}
