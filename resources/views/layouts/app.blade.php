@@ -15,7 +15,7 @@
           content="@yield('keyword', setting('seo_keyword', 'badidol,坏偶像,bad偶像,坏idol,badaidou,坏aidou,bad爱豆,坏爱豆,bad idol,bad-idol,badidou,坏idou,badidol.com'))"/>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('res/layui/css/layui.css') }}">
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.2.3/css/layui.css">
     <link rel="stylesheet" href="{{ asset('res/css/global.css') }}">
     <link rel="stylesheet" href="{{ asset('res/css/badidol.css') }}">
 
@@ -42,7 +42,7 @@
 @endif
 
 <!-- Scripts -->
-<script src="{{ asset('res/layui/layui.js') }}"></script>
+<script src="https://www.layuicdn.com/layui-v2.2.3/layui.js"></script>
 <script>
     layui.cache.page = '';
     layui.cache.user = {
