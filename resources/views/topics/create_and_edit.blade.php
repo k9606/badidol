@@ -76,7 +76,7 @@
 @endsection
 
 @section('styles')
-    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/simditor/2.3.28/styles/simditor.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/simditor/2.3.6/styles/simditor.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('res/css/simditor-emoji.css') }}">
 @stop
 
@@ -85,7 +85,7 @@
     <script type="text/javascript" src="{{ asset('res/mods/module.js') }}"></script>
     <script type="text/javascript" src="{{ asset('res/mods/hotkeys.js') }}"></script>
     <script type="text/javascript" src="{{ asset('res/mods/uploader.js') }}"></script>
-    <script type="text/javascript" src="https://cdn.staticfile.org/simditor/2.3.28/lib/simditor.min.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/simditor/2.3.6/lib/simditor.min.js"></script>
     <script type="text/javascript" src="{{ asset('res/mods/simditor-emoji.js') }}"></script>
 
     <script>
