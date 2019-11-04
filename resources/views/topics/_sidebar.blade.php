@@ -41,8 +41,10 @@
         感谢
     </div>
     <div class="fly-panel-main">
-        <a href="#" target="_blank" class="fly-zanzhu" style="background-color: #5FB878;">BadIdol 坏偶像</a>
-        <a href="" target="_blank" class="fly-zanzhu" style="background-color: #393D49;">虚席以待</a>
+        <a href="https://www.layui.com" target="_blank" class="fly-zanzhu" style="background-color: #5FB878;">Layui -
+            经典模块化前端 UI 框架</a>
+        <a href="https://learnku.com/laravel" target="_blank" class="fly-zanzhu" style="background-color: #393D49;">Laravel
+            China - 高品质的 Laravel 社区</a>
     </div>
 </div>
 
