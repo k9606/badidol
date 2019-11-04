@@ -78,6 +78,7 @@
 @section('styles')
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/simditor/2.3.6/styles/simditor.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('res/css/simditor-emoji.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('res/css/simditor-mention.css') }}">
 @stop
 
 @section('scripts')
@@ -87,6 +88,7 @@
     <script type="text/javascript" src="{{ asset('res/mods/uploader.js') }}"></script>
     <script type="text/javascript" src="https://cdn.staticfile.org/simditor/2.3.6/lib/simditor.min.js"></script>
     <script type="text/javascript" src="{{ asset('res/mods/simditor-emoji.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('res/mods/simditor-mention.js') }}"></script>
 
     <script>
         $(document).ready(function () {
@@ -125,6 +127,35 @@
                 ],
                 emoji: {
                     imagePath: "{{ asset('res/emoji/') }}",
+                },
+                mention: {
+                    items: [
+                        {
+                            id: 1,
+                            name: "春雨",
+                            pinyin: "chunyu",
+                            abbr: "cy",
+                            url: "http://www.example.com"
+                        },
+                        {
+                            id: 2,
+                            name: "夏荷",
+                            pinyin: "xiahe",
+                            abbr: "xh",
+                        },
+                        {
+                            id: 3,
+                            name: "秋叶",
+                            pinyin: "qiuye",
+                            abbr: "qy",
+                        },
+                        {
+                            id: 4,
+                            name: "冬雪",
+                            pinyin: "dongxue",
+                            abbr: "dx",
+                        },
+                    ],
                 }
             });
         });
