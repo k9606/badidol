@@ -23,6 +23,6 @@
     max-width: 100%;
 }
 
-.reply-simditor .simditor-wrapper {
-    /*height: 150px !important;*/
+.reply-simditor .simditor .simditor-body {
+    min-height: 100px;
 }
