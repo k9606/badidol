@@ -36,6 +36,16 @@
     </div>
 @endif
 
+<div class="fly-panel">
+    <div class="fly-panel-title">
+        感谢
+    </div>
+    <div class="fly-panel-main">
+        <a href="#" target="_blank" class="fly-zanzhu" style="background-color: #5FB878;">BadIdol 坏偶像</a>
+        <a href="" target="_blank" class="fly-zanzhu" style="background-color: #393D49;">虚席以待</a>
+    </div>
+</div>
+
 @if (count($links))
     <dl class="fly-panel fly-list-one">
         <dt class="fly-panel-title">资源推荐</dt>
@@ -65,16 +75,6 @@
         </ul>
     </div>
 @endif
-
-<div class="fly-panel">
-    <div class="fly-panel-title">
-        这里可作为广告区域
-    </div>
-    <div class="fly-panel-main">
-        <a href="#" target="_blank" class="fly-zanzhu" style="background-color: #5FB878;">BadIdol 坏偶像</a>
-        <a href="" target="_blank" class="fly-zanzhu" style="background-color: #393D49;">虚席以待</a>
-    </div>
-</div>
 
 <div class="fly-panel" style="padding: 20px 0; text-align: center;">
     <img src="http://www.ooxoo.net/data/attachment/portal/201208/01/100502zzkpckkvkr1veecl.jpg" style="max-width: 100%;"
