@@ -1,6 +1,6 @@
 <div class="layui-col-md6 fly-home-jie">
     <div class="fly-panel">
-        <h3 class="fly-panel-title">话题</h3>
+        <h3 class="fly-panel-title">最新话题</h3>
         @if (count($topics))
             <ul class="jie-row">
                 @foreach ($topics as $topic)

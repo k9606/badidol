@@ -1,6 +1,6 @@
 <div class="layui-col-md6 fly-home-da">
     <div class="fly-panel">
-        <h3 class="fly-panel-title">回复</h3>
+        <h3 class="fly-panel-title">最近回复</h3>
         @if (count($replies))
             <ul class="home-jieda">
                 @foreach ($replies as $reply)
