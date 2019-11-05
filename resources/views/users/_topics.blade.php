@@ -1,25 +1,21 @@
 @if (count($topics))
 
-    <ul class="list-group mt-4 border-0">
-        @foreach ($topics as $topic)
-            <li class="list-group-item pl-2 pr-2 border-right-0 border-left-0 @if($loop->first) border-top-0 @endif">
-                <a href="{{ $topic->link() }}">
-                    {{ $topic->title }}
-                </a>
-                <span class="meta float-right text-secondary">
-          {{ $topic->reply_count }} 回复
-          <span> ⋅ </span>
-          {{ $topic->created_at->diffForHumans() }}
-        </span>
-            </li>
-        @endforeach
-    </ul>
+    <div class="layui-col-md6 fly-home-jie">
+        <div class="fly-panel">
+            <h3 class="fly-panel-title">{{ $user->name }} 最近的提问</h3>
+            <ul class="jie-row">
+                @foreach ($topics as $topic)
+                    <li>
+                        <a href="{{ $topic->link() }}" class="jie-title"> {{ $topic->title }}</a>
+                        <i>{{ $topic->created_at->diffForHumans() }}</i>
+                        <em class="layui-hide-xs">{{ $topic->reply_count }} 回复</em>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
 
 @else
-    <div class="empty-block">暂无数据 ~_~</div>
+    <div class="fly-none" style="min-height: 50px; padding:30px 0; height:auto;"><i style="font-size:14px;">没有发表任何求解</i>
+    </div>
 @endif
-
-{{-- 分页 --}}
-<div class="mt-4 pt-1">
-    {!! $topics->render() !!}
-</div>

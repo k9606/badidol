@@ -1,28 +1,25 @@
 @if (count($replies))
 
-    <ul class="list-group mt-4 border-0">
-        @foreach ($replies as $reply)
-            <li class="list-group-item pl-2 pr-2 border-right-0 border-left-0 @if($loop->first) border-top-0 @endif">
-                <a href="{{ $reply->topic->link(['#reply' . $reply->id]) }}">
-                    {{ $reply->topic->title }}
-                </a>
-
-                <div class="reply-content text-secondary mt-2 mb-2">
-                    {!! $reply->content !!}
-                </div>
-
-                <div class="text-secondary" style="font-size:0.9em;">
-                    <i class="far fa-clock"></i> 回复于 {{ $reply->created_at->diffForHumans() }}
-                </div>
-            </li>
-        @endforeach
-    </ul>
+    <div class="layui-col-md6 fly-home-da">
+        <div class="fly-panel">
+            <h3 class="fly-panel-title">{{ $user->name }} 最近的回答</h3>
+            <ul class="home-jieda">
+                @foreach ($replies as $reply)
+                    <li>
+                        <p>
+                            <span>{{ $reply->created_at->diffForHumans() }}</span>
+                            在<a href="{{ $reply->topic->link(['#reply' . $reply->id]) }}"
+                                target="_blank">{{ $reply->topic->title }}</a>中回答：
+                        </p>
+                        <div class="home-dacontent">
+                            {!! $reply->content !!}
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
 
 @else
-    <div class="empty-block">暂无数据 ~_~</div>
+    <div class="fly-none" style="min-height: 50px; padding:30px 0; height:auto;"><span>没有回答任何问题</span></div>
 @endif
-
-{{-- 分页 --}}
-<div class="mt-4 pt-1">
-    {!! $replies->appends(Request::except('page'))->render() !!}
-</div>
