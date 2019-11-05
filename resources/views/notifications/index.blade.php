@@ -3,16 +3,20 @@
 @section('title', '我的通知')
 
 @section('content')
-    <div class="container">
-        <div class="col-md-10 offset-md-1">
-            <div class="card ">
+    <div class="layui-container fly-marginTop">
+        <div class="fly-panel" pad20 style="padding-top: 5px;">
+            <!--<div class="fly-none">没有权限</div>-->
+            <div class="layui-form layui-form-pane">
+                <div class="layui-tab layui-tab-brief" lay-filter="user">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">我的消息<!-- 编辑帖子 --></li>
+                    </ul>
+                    <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
+                        <div class="layui-tab-item layui-show">
 
-                <div class="card-body">
 
-                    <h3 class="text-xs-center">
-                        <i class="far fa-bell" aria-hidden="true"></i> 我的通知
-                    </h3>
-                    <hr>
+                            <div class="fly-panel">
+                                <ul class="home-jieda">
 
                     @if ($notifications->count())
 
@@ -25,9 +29,15 @@
                         </div>
 
                     @else
-                        <div class="empty-block">没有消息通知！</div>
+                        <div class="fly-none" style="min-height: 50px; padding:30px 0; height:auto;"><span>没有回答任何问题</span></div>
                     @endif
 
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
