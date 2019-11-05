@@ -29,7 +29,7 @@
                         </div>
 
                     @else
-                        <div class="fly-none" style="min-height: 50px; padding:30px 0; height:auto;"><span>没有回答任何问题</span></div>
+                        <div class="fly-none" style="min-height: 50px; padding:30px 0; height:auto;"><span>暂无消息</span></div>
                     @endif
 
                                 </ul>
