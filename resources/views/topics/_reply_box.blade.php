@@ -5,7 +5,7 @@
         <div class="layui-form-item layui-form-text">
             <a name="comment"></a>
             <div class="layui-input-block reply-simditor">
-                <textarea name="content" id="editor" placeholder="请输入内容" required autofocus></textarea>
+                <textarea name="content" id="editor" placeholder="请输入内容" required></textarea>
             </div>
         </div>
         <div class="layui-form-item">
