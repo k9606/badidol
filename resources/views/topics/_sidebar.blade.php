@@ -25,7 +25,7 @@
                 <dd>
                     <a href="{{ route('users.show', $active_user->id) }}">
                         <img
-                            src="{{ $active_user->avatar }}"><cite>{{ $active_user->name }}</cite><i>106次回答</i>
+                            src="{{ $active_user->avatar }}"><cite>{{ $active_user->name }}</cite><i>{{ $active_user->name }}</i>
                     </a>
                 </dd>
             @endforeach
