@@ -28,14 +28,14 @@
                 {!! $reply->content !!}
             </div>
             <div class="jieda-reply">
-              <span class="jieda-zan" type="zan">
-                <i class="iconfont icon-zan"></i>
-                <em>66</em>
-              </span>
-                <span type="reply">
-                <i class="iconfont icon-svgmoban53"></i>
-                回复
-              </span>
+{{--              <span class="jieda-zan" type="zan">--}}
+{{--                <i class="iconfont icon-zan"></i>--}}
+{{--                <em>66</em>--}}
+{{--              </span>--}}
+{{--                <span type="reply">--}}
+{{--                <i class="iconfont icon-svgmoban53"></i>--}}
+{{--                回复--}}
+{{--              </span>--}}
                 @can('destroy', $reply)
                     <div class="jieda-admin">
                         <form action="{{ route('replies.destroy', $reply->id) }}"

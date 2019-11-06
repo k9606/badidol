@@ -1,20 +1,20 @@
-<div class="fly-panel fly-signin">
-    <div class="fly-panel-title">
-        反馈
-        <i class="fly-mid"></i>
-        <a href="javascript:;" class="fly-link" id="LAY_signinHelp">更新<span class="layui-badge-dot"></span></a>
-        <span class="fly-signin-days">v 1.0.0</span>
-    </div>
-    <div class="fly-panel-main fly-signin-main">
-        <button class="layui-btn layui-btn-danger" id="LAY_signin">BUG 反馈</button>
+{{--<div class="fly-panel fly-signin">--}}
+{{--    <div class="fly-panel-title">--}}
+{{--        反馈--}}
+{{--        <i class="fly-mid"></i>--}}
+{{--        <a href="javascript:;" class="fly-link" id="LAY_signinHelp">更新<span class="layui-badge-dot"></span></a>--}}
+{{--        <span class="fly-signin-days">v 1.0.0</span>--}}
+{{--    </div>--}}
+{{--    <div class="fly-panel-main fly-signin-main">--}}
+{{--        <button class="layui-btn layui-btn-danger" id="LAY_signin">BUG 反馈</button>--}}
 
-        <!-- 已签到状态 -->
-        <!--
-        <button class="layui-btn layui-btn-disabled">今日已签到</button>
-        <span>获得了<cite>20</cite>飞吻</span>
-        -->
-    </div>
-</div>
+{{--        <!-- 已签到状态 -->--}}
+{{--        <!----}}
+{{--        <button class="layui-btn layui-btn-disabled">今日已签到</button>--}}
+{{--        <span>获得了<cite>20</cite>飞吻</span>--}}
+{{--        -->--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 @if (count($active_users))
     <div class="fly-panel fly-rank fly-rank-reply" id="LAY_replyRank">

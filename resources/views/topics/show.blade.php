@@ -13,15 +13,15 @@
                     <!-- <span class="layui-badge">审核中</span> -->
                     <span class="layui-badge layui-bg-green fly-detail-column">动态</span>
 
-                    <span class="layui-badge" style="background-color: #999;">未结</span>
-                    <!-- <span class="layui-badge" style="background-color: #5FB878;">已结</span> -->
+{{--                    <span class="layui-badge" style="background-color: #999;">未结</span>--}}
+{{--                    <!-- <span class="layui-badge" style="background-color: #5FB878;">已结</span> -->--}}
 
-                    <span class="layui-badge layui-bg-black">置顶</span>
-                    <span class="layui-badge layui-bg-red">精帖</span>
+{{--                    <span class="layui-badge layui-bg-black">置顶</span>--}}
+{{--                    <span class="layui-badge layui-bg-red">精帖</span>--}}
 
                     <span class="fly-list-nums">
             <a href="#comment"><i class="iconfont" title="回答">&#xe60c;</i> {{ $topic->reply_count }}</a>
-            <i class="iconfont" title="人气">&#xe60b;</i> 99999
+{{--            <i class="iconfont" title="人气">&#xe60b;</i> 99999--}}
           </span>
                 </div>
                 <div class="detail-about">
