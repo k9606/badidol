@@ -52,8 +52,8 @@ return [
     // 数据即将保持的触发的钩子，可以对用户提交的数据做修改
     'before_save' => function (&$data) {
         // 为网站名称加上后缀，加上判断是为了防止多次添加
-        if (strpos($data['site_name'], 'BadIdol 坏偶像') === false) {
-            $data['site_name'] .= ' - BadIdol 坏偶像';
+        if (strpos($data['site_name'], 'BadIdol.com 坏偶像') === false) {
+            $data['site_name'] .= ' | BadIdol.com 坏偶像';
         }
     },
 
