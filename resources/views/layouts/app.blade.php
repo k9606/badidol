@@ -16,22 +16,14 @@
     <meta name="keywords"
           content="@yield('keyword', setting('seo_keyword', 'badidol,坏偶像,bad偶像,坏idol,badaidou,坏aidou,bad爱豆,坏爱豆,bad idol,bad-idol,badidou,坏idou,badidol.com'))"/>
 
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?ba4a4117c1c902e047fcbdb87aab444d";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-
     <!-- Styles -->
     <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.2.3/css/layui.css">
     <link rel="stylesheet" href="{{ asset('res/css/global.css') }}">
     <link rel="stylesheet" href="{{ asset('res/css/badidol.css') }}">
 
     @yield('styles')
+
+    @include('common._baidu_js_count')
 
 </head>
 
