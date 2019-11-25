@@ -1,8 +1,10 @@
 <div class="fly-footer">
     <p>
-        2019 &copy;<a href="#" target="_blank">badidol.com</a>
+        <?php echo date('Y');?> &copy;<a href="#" target="_blank">badidol.com</a>
     </p>
     <p>
-        <a href="mailto:{{ setting('contact_email') }}">联系 BadIdol 坏偶像</a>
+        <a href="mailto:{{ setting('contact_email') }}">联系站长</a>
+        |
+        <a href="#">蜀ICP备19037196号-1</a>
     </p>
 </div>

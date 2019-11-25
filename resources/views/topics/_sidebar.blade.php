@@ -45,26 +45,26 @@
     </div>
 </div>
 
-@if (count($links))
-    <dl class="fly-panel fly-list-one">
-        <dt class="fly-panel-title">资源推荐</dt>
-        @foreach ($links as $link)
-            <dd>
-                <a href="{{ $link->link }}">{{ $link->title }}</a>
-                <span><i class="iconfont icon-pinglun1"></i> 16</span>
-            </dd>
-    @endforeach
+{{--@if (count($links))--}}
+{{--    <dl class="fly-panel fly-list-one">--}}
+{{--        <dt class="fly-panel-title">资源推荐</dt>--}}
+{{--        @foreach ($links as $link)--}}
+{{--            <dd>--}}
+{{--                <a href="{{ $link->link }}">{{ $link->title }}</a>--}}
+{{--                <span><i class="iconfont icon-pinglun1"></i> 16</span>--}}
+{{--            </dd>--}}
+{{--    @endforeach--}}
 
-    <!-- 无数据时 -->
-        <!--
-        <div class="fly-none">没有相关数据</div>
-        -->
-    </dl>
-@endif
+{{--    <!-- 无数据时 -->--}}
+{{--        <!----}}
+{{--        <div class="fly-none">没有相关数据</div>--}}
+{{--        -->--}}
+{{--    </dl>--}}
+{{--@endif--}}
 
 @if (count($links))
     <div class="fly-panel">
-        <h3 class="fly-panel-title">资源推荐</h3>
+        <h3 class="fly-panel-title">推荐</h3>
         <ul class="fly-panel-main fly-list-static">
             @foreach ($links as $link)
                 <li>
@@ -75,18 +75,7 @@
     </div>
 @endif
 
-<div class="fly-panel" style="padding: 20px 0; text-align: center;">
-    <img src="http://www.ooxoo.net/data/attachment/portal/201208/01/100502zzkpckkvkr1veecl.jpg" style="max-width: 100%;"
+<div class="fly-panel">
+    <img src="{{ asset('res/images/qq.jpg') }}" style="max-width: 100%;border-radius: 20%"
          alt="layui">
-    <p style="position: relative; color: #666;">微信扫码关注 BadIdol 公众号</p>
-</div>
-
-<div class="fly-panel fly-link">
-    <h3 class="fly-panel-title">友情链接</h3>
-    <dl class="fly-panel-main">
-        <dd><a href="https://learnku.com/laravel" target="_blank">Laravel China</a>
-        <dd>
-        <dd><a href="https://www.layui.com" target="_blank">Layui</a>
-        <dd>
-    </dl>
 </div>

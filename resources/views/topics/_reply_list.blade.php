@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="detail-hits">
-                    <span>{{ $reply->created_at->diffForHumans() }}</span>
+                    <span>{{ $reply->created_at }}</span>
                 </div>
             </div>
             <div class="detail-body jieda-body photos">

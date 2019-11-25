@@ -15,8 +15,8 @@
         <p style="padding: 10px 0; color: #5FB878;">{{ $user->email }}</p>
 
         <p class="fly-home-info">
-            <i class="iconfont icon-shijian"></i><span>注册于 {{ $user->created_at->diffForHumans() }}</span>
-            <i class="iconfont icon-chengshi"></i><span>最后活跃 {{ $user->last_actived_at->diffForHumans() }}</span>
+            <i class="iconfont icon-shijian"></i><span>注册于 {{ $user->created_at }}</span>
+            <i class="iconfont icon-chengshi"></i><span>最后活跃 {{ $user->last_actived_at }}</span>
         </p>
 
         <p class="fly-home-sign">{{ $user->introduction }}</p>

@@ -5,7 +5,10 @@
         </a>
         <ul class="layui-nav fly-nav layui-hide-xs">
             <li class="layui-nav-item layui-this">
-                <a href="{{ url('/') }}"><i class="iconfont icon-jiaoliu"></i>交流</a>
+                <a href="{{ url('/') }}"><i class="layui-icon">&#xe68e;</i>首页</a>
+            </li>
+            <li class="layui-nav-item layui-this">
+                <a href="https://github.com/k9606"><i class="layui-icon">&#xe635;</i>代码</a>
             </li>
         </ul>
 
@@ -62,11 +65,11 @@
 <div class="fly-panel fly-column">
     <div class="layui-container">
         <ul class="layui-clear">
-            <li class="{{ active_class(if_route('topics.index')) ? 'layui-this' : '' }}"><a href="{{ route('topics.index') }}">话题</a></li>
-            <li class="{{ category_nav_active(1) }}"><a href="{{ route('categories.show', 1) }}">分享<span class="layui-badge-dot"></a></li>
-            <li class="{{ category_nav_active(2) }}"><a href="{{ route('categories.show', 2) }}">教程</a></li>
-            <li class="{{ category_nav_active(3) }}"><a href="{{ route('categories.show', 3) }}">问答</a></li>
-            <li class="{{ category_nav_active(4) }}"><a href="{{ route('categories.show', 4) }}">公告</a></li>
+            <li class="{{ active_class(if_route('topics.index')) ? 'layui-this' : '' }}"><a href="{{ route('topics.index') }}">全部</a></li>
+            <li class="{{ category_nav_active(1) }}"><a href="{{ route('categories.show', 1) }}">偶像</a></li>
+            <li class="{{ category_nav_active(2) }}"><a href="{{ route('categories.show', 2) }}">提问</a></li>
+            <li class="{{ category_nav_active(3) }}"><a href="{{ route('categories.show', 3) }}">资讯<span class="layui-badge-dot"></a></li>
+            <li class="{{ category_nav_active(4) }}"><a href="{{ route('categories.show', 4) }}">BUG</a></li>
             </li>
         </ul>
 

@@ -34,7 +34,7 @@
                             <cite>{{ $topic->user->name }}</cite>
                             <i class="iconfont icon-renzheng" title="认证信息：xxx"></i>
                         </a>
-                        <span>{{ $topic->created_at->diffForHumans() }}</span>
+                        <span>{{ $topic->created_at }}</span>
                     </div>
                     <div class="detail-hits" id="LAY_jieAdmin" data-id="123">
                         <span style="padding-right: 10px; color: #FF7200">暂无签名</span>

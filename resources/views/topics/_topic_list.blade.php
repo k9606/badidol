@@ -19,7 +19,7 @@
                         <i class="layui-badge fly-badge-vip">VIP3</i>
                         -->
                     </a>
-                    <span>{{ $topic->updated_at->diffForHumans() }}</span>
+                    <span>{{ $topic->updated_at }}</span>
 
                     <!--                            <span class="fly-list-kiss layui-hide-xs" title="悬赏飞吻"><i class="iconfont icon-kiss"></i> 60</span>-->
                     <!--<span class="layui-badge fly-badge-accept layui-hide-xs">已结</span>-->
