@@ -11,8 +11,8 @@
 
     <meta name="baidu-site-verification" content="lzSriR9urd"/>
 
-    <title>@yield('title', 'BadIdol.com') | {{ setting('site_name', 'BadIdol 坏偶像') }}</title>
-    <meta name="description" content="@yield('description', setting('seo_description', 'BadIdol 坏偶像'))"/>
+    <title>@yield('title', '坏偶像社区') | {{ setting('site_name', 'BadIdol.com 坏偶像') }}</title>
+    <meta name="description" content="@yield('description', setting('seo_description', 'BadIdol.com 坏偶像'))"/>
     <meta name="keywords"
           content="@yield('keyword', setting('seo_keyword', 'badidol,坏偶像,bad偶像,坏idol,badaidou,坏aidou,bad爱豆,坏爱豆,bad idol,bad-idol,badidou,坏idou,badidol.com'))"/>
 
