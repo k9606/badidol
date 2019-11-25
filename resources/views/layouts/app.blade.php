@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="baidu-site-verification" content="b1HexK41cs"/>
+    <meta name="baidu-site-verification" content="lzSriR9urd" />
 
     <title>@yield('title', 'BadIdol.com') | {{ setting('site_name', 'BadIdol 坏偶像') }}</title>
     <meta name="description" content="@yield('description', setting('seo_description', 'BadIdol 坏偶像'))"/>
