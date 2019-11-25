@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('auth.layouts.app')
 
 @section('content')
 
@@ -48,7 +48,7 @@
                             @endif
                         </div>
                         <div class="well well-sm">
-                            <button type="submit" class="btn btn-primary">保存</button>
+                            <button type="submit" class="layui-btn">保存</button>
                         </div>
                     </form>
                 </div>
