@@ -9,6 +9,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <meta name="baidu-site-verification" content="b1HexK41cs"/>
+
     <title>@yield('title', 'BadIdol.com') | {{ setting('site_name', 'BadIdol 坏偶像') }}</title>
     <meta name="description" content="@yield('description', setting('seo_description', 'BadIdol 坏偶像'))"/>
     <meta name="keywords"
@@ -29,7 +31,7 @@
 
 <div class="layui-container">
 
-{{--    @include('shared._messages')--}}
+    {{--    @include('shared._messages')--}}
 
     @yield('content')
 
