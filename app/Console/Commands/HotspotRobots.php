@@ -99,7 +99,5 @@ class HotspotRobots extends Command
         $result = curl_exec($ch);
 
         $this->info("推送成功\r\n" . $result);
-
-        var_dump($ids);
     }
 }
