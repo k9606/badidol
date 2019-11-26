@@ -12,9 +12,10 @@
     <meta name="baidu-site-verification" content="lzSriR9urd"/>
 
     <title>@yield('title', '坏偶像社区') | {{ setting('site_name', 'BadIdol.com 坏偶像') }}</title>
-    <meta name="description" content="@yield('description', setting('seo_description', 'BadIdol.com 坏偶像'))"/>
-    <meta name="keywords"
-          content="@yield('keyword', setting('seo_keyword', 'badidol,坏偶像,bad偶像,坏idol,badaidou,坏aidou,bad爱豆,坏爱豆,bad idol,bad-idol,badidou,坏idou,badidol.com'))"/>
+    <meta name="description" content="@yield('description', setting('seo_description',
+    'BadIdol 坏偶像是一个高品质的粉丝社区，致力于为每位粉丝提供一个讨论偶像、发起提问、获取资讯的创造型社区。'))"/>
+    <meta name="keywords" content="@yield('keyword', setting('seo_keyword',
+    'badidol,坏偶像,badidol社区,坏偶像社区,badidol论坛,坏偶像论坛,粉丝,粉丝社区,粉丝论坛'))"/>
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.2.3/css/layui.css">
