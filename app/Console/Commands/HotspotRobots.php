@@ -24,6 +24,21 @@ class HotspotRobots extends Command
      */
     protected $description = '热点机器人';
 
+    protected $decoration = [
+        '是为什么呢? ',
+        '到底是因为什么? ',
+        '的真实原因是什么? ',
+        '是因为什么原因呢? ',
+        '我们应该了解些什么? ',
+        '其中有什么需要注意的? ',
+    ];
+
+    protected $contentPrefix = [
+        '这条消息还有些朋友不知道, ',
+        '此新闻还许多网友不了解, ',
+        '这个资讯你看过吗, ',
+    ];
+
     /**
      * Create a new command instance.
      *
@@ -66,8 +81,10 @@ class HotspotRobots extends Command
             $topic = new Topic();
             $topic->user_id = $hotspotRobots[rand(0, $randEnd)];
             $topic->category_id = 3;
-            $topic->title = $title;
-            $topic->body = $body . "<a href='https://www.baidu.com/s?ie=UTF-8&wd=$href'>查看全部</a>";
+            $topic->title = $title . $this->randomDecoration();
+            $topic->body = $this->randomContentPrefix()
+                . $body
+                . "<a href='https://www.baidu.com/s?ie=UTF-8&wd=$href'>查看全部</a>";
             $topic->save();
 
             $ids[] = $topic->id;
@@ -78,7 +95,7 @@ class HotspotRobots extends Command
         $this->pushBaidu($ids);
     }
 
-    public function pushBaidu($ids)
+    protected function pushBaidu($ids)
     {
         $baseUrl = env('APP_URL') . '/topics/';
 
@@ -99,5 +116,16 @@ class HotspotRobots extends Command
         $result = curl_exec($ch);
 
         $this->info("推送成功\r\n" . $result);
+    }
+
+    protected function randomDecoration()
+    {
+        return $this->decoration[rand(0, count($this->decoration) - 1)];
+    }
+
+    protected function randomContentPrefix()
+    {
+        return $this->contentPrefix[rand(0, count($this->contentPrefix) - 1)]
+            . '下面就和 BadIdol 的小编一起来了解一下:<br><br>';
     }
 }
