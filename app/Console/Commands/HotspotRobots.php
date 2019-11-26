@@ -56,6 +56,7 @@ class HotspotRobots extends Command
 
         $crawler = $client->request('GET', 'http://top.baidu.com/buzz?b=1&fr=20811');
         $content = $crawler->filter('.list-table > .item-tr');
+        $ids = [];
         foreach ($content as $k => $v) {
             $tmp = explode("\r\n", trim($v->textContent));
             $title = trim($tmp[0]);
@@ -68,8 +69,34 @@ class HotspotRobots extends Command
             $topic->title = $title;
             $topic->body = $body . "<a href='https://www.baidu.com/s?ie=UTF-8&wd=$href'>查看全部</a>";
             $topic->save();
+
+            $ids[] = $topic->id;
         }
 
         $this->info('爬取成功');
+
+        $this->pushBaidu($ids)
+    }
+
+    public function pushBaidu($ids)
+    {
+        $urls = array(
+            'http://badidol.com/topics/137/japanese-couple-arrested-for-stealing-rice-and-ordered-12-year-old-son-to-participate',
+            'http://badidol.com/topics/138',
+        );
+        //
+        //http://data.zz.baidu.com/urls?site=badidol.com&token=j2uKCZxtd8ieGZTc
+        $api = 'http://data.zz.baidu.com/urls?site=badidol.com&token=j2uKCZxtd8ieGZTc';
+        $ch = curl_init();
+        $options = array(
+            CURLOPT_URL => $api,
+            CURLOPT_POST => true,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POSTFIELDS => implode("\n", $urls),
+            CURLOPT_HTTPHEADER => array('Content-Type: text/plain'),
+        );
+        curl_setopt_array($ch, $options);
+        $result = curl_exec($ch);
+        echo $result;
     }
 }
