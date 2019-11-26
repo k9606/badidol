@@ -30,8 +30,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('badidol:calculate-active-user')->hourly();
         // 每日零时执行一次
         $schedule->command('badidol:sync-user-actived-at')->dailyAt('00:00');
-        // 每三十分钟执行一次任务
-        $schedule->command('badidol:hotspot-robots')->everyThirtyMinutes();
+        // 每隔一个小时执行一遍
+        $schedule->command('badidol:hotspot-robots')->hourly();
     }
 
     /**
