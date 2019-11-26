@@ -15,7 +15,7 @@ class HotspotRobots extends Command
      *
      * @var string
      */
-    protected $signature = 'badidol:hotspot_robots';
+    protected $signature = 'badidol:hotspot-robots';
 
     /**
      * The console command description.
@@ -69,5 +69,7 @@ class HotspotRobots extends Command
             $topic->body = $body . "<a href='https://www.baidu.com/s?ie=UTF-8&wd=$href'>查看全部</a>";
             $topic->save();
         }
+
+        $this->info('爬取成功');
     }
 }
