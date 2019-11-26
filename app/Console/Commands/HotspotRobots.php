@@ -75,28 +75,31 @@ class HotspotRobots extends Command
 
         $this->info('爬取成功');
 
-        $this->pushBaidu($ids)
+        $this->pushBaidu($ids);
     }
 
     public function pushBaidu($ids)
     {
-        $urls = array(
-            'http://badidol.com/topics/137/japanese-couple-arrested-for-stealing-rice-and-ordered-12-year-old-son-to-participate',
-            'http://badidol.com/topics/138',
-        );
-        //
-        //http://data.zz.baidu.com/urls?site=badidol.com&token=j2uKCZxtd8ieGZTc
+        $baseUrl = env('APP_URL') . '/topics/';
+
+        foreach ($ids as $k => $v) {
+            $ids[$k] = $baseUrl . $v;
+        }
+
         $api = 'http://data.zz.baidu.com/urls?site=badidol.com&token=j2uKCZxtd8ieGZTc';
         $ch = curl_init();
-        $options = array(
+        $options = [
             CURLOPT_URL => $api,
             CURLOPT_POST => true,
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POSTFIELDS => implode("\n", $urls),
+            CURLOPT_POSTFIELDS => implode("\n", $ids),
             CURLOPT_HTTPHEADER => array('Content-Type: text/plain'),
-        );
+        ];
         curl_setopt_array($ch, $options);
         $result = curl_exec($ch);
-        echo $result;
+
+        $this->info("推送成功\r\n" . $result);
+
+        var_dump($ids);
     }
 }
