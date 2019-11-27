@@ -3,8 +3,6 @@
 namespace App\Console\Commands;
 
 use App\Models\Topic;
-use Fukuball\Jieba\Finalseg;
-use Fukuball\Jieba\Jieba;
 use Goutte\Client;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Cache;
@@ -39,6 +37,7 @@ class HotspotRobots extends Command
         '这消息有些朋友不知道,',
         '此新闻许多网友不了解,',
         '这资讯你看过吗,',
+        '此信息很多人没收到,',
     ];
 
     /**
@@ -58,11 +57,6 @@ class HotspotRobots extends Command
      */
     public function handle(Client $client)
     {
-        ini_set('memory_limit', '600M');
-
-        Jieba::init();
-        Finalseg::init();
-
         if (!$hotspotRobots = Cache::get('hotspot_robots')) {
             $hotspotRobots = DB::table('users')
                 ->where('email', 'like', '%@badidol.com')
@@ -92,7 +86,6 @@ class HotspotRobots extends Command
             $topic->body = $this->randomContentPrefix()
                 . $body
                 . "<a href='https://www.baidu.com/s?ie=UTF-8&wd=$href'>查看全部</a>";
-            $topic->keywords = $this->keyword($title);
             $topic->save();
 
             $ids[] = $topic->id;
@@ -126,20 +119,6 @@ class HotspotRobots extends Command
         $this->info("推送成功\r\n" . $result);
     }
 
-    protected function keyword($title)
-    {
-        foreach ($this->decoration as $v) {
-            $title = str_replace($v, '', $title);
-        }
-
-        $seg = array_unique(array_filter(Jieba::cut($title), function ($item) {
-            return mb_strlen($item) > 1;
-        }));
-        array_unshift($seg, $title);
-
-        return rtrim(mb_substr(implode(',', $seg) . ',' . setting('seo_keyword', 'badidol,坏偶像,badidol社区,坏偶像社区,badidol论坛,坏偶像论坛,粉丝,粉丝社区,粉丝论坛'), 0, 250), ',');
-    }
-
     protected function randomDecoration()
     {
         return $this->decoration[rand(0, count($this->decoration) - 1)];
@@ -148,6 +127,6 @@ class HotspotRobots extends Command
     protected function randomContentPrefix()
     {
         return $this->contentPrefix[rand(0, count($this->contentPrefix) - 1)]
-            . '请和 BadIdol 的小编来看下:<br><br>';
+            . '来 BadIdol 看看:<br><br>';
     }
 }
