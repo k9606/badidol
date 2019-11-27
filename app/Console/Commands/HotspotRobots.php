@@ -58,6 +58,11 @@ class HotspotRobots extends Command
      */
     public function handle(Client $client)
     {
+        ini_set('memory_limit', '1024M');
+
+        Jieba::init();
+        Finalseg::init();
+
         if (!$hotspotRobots = Cache::get('hotspot_robots')) {
             $hotspotRobots = DB::table('users')
                 ->where('email', 'like', '%@badidol.com')
@@ -123,11 +128,6 @@ class HotspotRobots extends Command
 
     protected function keyword($title)
     {
-        ini_set('memory_limit', '1024M');
-
-        Jieba::init();
-        Finalseg::init();
-
         foreach ($this->decoration as $v) {
             $title = str_replace($v, '', $title);
         }

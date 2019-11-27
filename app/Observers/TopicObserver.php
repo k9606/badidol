@@ -17,6 +17,11 @@ class TopicObserver
 
         // 生成话题摘录
         $topic->excerpt = make_excerpt($topic->body);
+
+        // seo 关键字
+        if (!$topic->keywords) {
+            $topic->keywords = rtrim(mb_substr($topic->title . ',' . setting('seo_keyword', 'badidol,坏偶像,badidol社区,坏偶像社区,badidol论坛,坏偶像论坛,粉丝,粉丝社区,粉丝论坛'), 0, 250), ',');
+        }
     }
 
     public function saved(Topic $topic)
