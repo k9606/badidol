@@ -37,11 +37,12 @@ class TranslateSlug implements ShouldQueue
             $title = str_replace($v, '', $title);
         }
 
-        $seg = array_filter(Jieba::cut($title), function ($item) {
+        $seg = array_unique(array_filter(Jieba::cut($title), function ($item) {
             return mb_strlen($item) > 1;
-        });
-        $keywords = rtrim($seg . setting('seo_keyword',
-                'badidol,坏偶像,badidol社区,坏偶像社区,badidol论坛,坏偶像论坛,粉丝,粉丝社区,粉丝论坛'), ',');
+        }));
+        array_unshift($seg, $title);
+
+        $keywords = rtrim(mb_substr(implode(',', $seg) . ',' . setting('seo_keyword', 'badidol,坏偶像,badidol社区,坏偶像社区,badidol论坛,坏偶像论坛,粉丝,粉丝社区,粉丝论坛'), 0, 250), ',');
 
         // 请求百度 API 接口进行翻译
         $slug = app(SlugTranslateHandler::class)->translate($title);

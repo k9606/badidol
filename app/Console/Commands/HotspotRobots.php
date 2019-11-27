@@ -34,9 +34,9 @@ class HotspotRobots extends Command
     ];
 
     protected $contentPrefix = [
-        '这条消息还有些朋友不知道,',
-        '此新闻还许多网友不了解,',
-        '这个资讯你看过吗,',
+        '这消息有些朋友不知道,',
+        '此新闻许多网友不了解,',
+        '这资讯你看过吗,',
     ];
 
     /**
