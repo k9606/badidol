@@ -58,7 +58,7 @@ class HotspotRobots extends Command
      */
     public function handle(Client $client)
     {
-        ini_set('memory_limit', '1024M');
+        ini_set('memory_limit', '600M');
 
         Jieba::init();
         Finalseg::init();
