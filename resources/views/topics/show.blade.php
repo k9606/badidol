@@ -2,6 +2,7 @@
 
 @section('title', $topic->title)
 @section('description', $topic->excerpt)
+@section('keyword', $topic->keywords)
 
 @section('content')
 
