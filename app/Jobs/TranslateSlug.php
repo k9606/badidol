@@ -27,6 +27,8 @@ class TranslateSlug implements ShouldQueue
 
     public function handle()
     {
+        ini_set('memory_limit', '1024M');
+
         Jieba::init();
         Finalseg::init();
 
