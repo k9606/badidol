@@ -70,6 +70,8 @@
                     {{--                    <div class="mt-5">--}}
                     {{--                        {!! $topics->appends(Request::except('page'))->render() !!}--}}
                     {{--                    </div>--}}
+                    <div style="text-align: center" id="test1">
+                    </div>
                 </div>
             </div>
         </div>
