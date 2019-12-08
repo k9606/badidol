@@ -65,12 +65,13 @@
 
                 <div class="card-body">
                     {{-- 话题列表 --}}
+                    @dd($topics->render()->data())
                     @include('topics._topic_list', ['topics' => $topics])
                     {{-- 分页 --}}
                     {{--                    <div class="mt-5">--}}
                     {{--                        {!! $topics->appends(Request::except('page'))->render() !!}--}}
                     {{--                    </div>--}}
-                    <div style="text-align: center" id="test1">
+                    <div style="text-align: center" id="laravel-page">
                     </div>
                 </div>
             </div>
@@ -82,3 +83,21 @@
     </div>
 
 @endsection
+
+<script>
+    var count = 50;
+    var curr = 2;
+    var limit = 10;
+</script>
+
+{{--#total: 492--}}
+{{--#lastPage: 25--}}
+{{--#items: Illuminate\Database\Eloquent\Collection {#612 ▶}--}}
+{{--#perPage: 20--}}
+{{--#currentPage: 3--}}
+{{--#path: "http://badidol.test"--}}
+{{--#query: []--}}
+{{--#fragment: null--}}
+{{--#pageName: "page"--}}
+{{--+onEachSide: 3--}}
+{{--#options: array:2 [▶]--}}
