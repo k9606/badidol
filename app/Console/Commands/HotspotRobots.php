@@ -121,12 +121,30 @@ class HotspotRobots extends Command
 
     protected function randomDecoration()
     {
-        return $this->decoration[rand(0, count($this->decoration) - 1)];
+        $decoration = $this->mixCommonPrefix($this->decoration);
+
+        return $decoration[rand(0, count($decoration) - 1)];
     }
 
     protected function randomContentPrefix()
     {
-        return $this->contentPrefix[rand(0, count($this->contentPrefix) - 1)]
-            . '来 BadIdol 看看:<br><br>';
+        $contentPrefix = $this->mixCommonPrefix($this->contentPrefix);
+
+        return $contentPrefix[rand(0, count($contentPrefix) - 1)]
+            . '来[BadIdol坏偶像]看看:<br><br>';
+    }
+
+    protected function mixCommonPrefix($waitMix)
+    {
+        $commonPrefix = [
+            '怎么回事?什么情况?',
+            '网友发表了自己的看法.',
+            '当时发生了什么?现在情况如何?',
+            '咱们要如何看待这条资讯?',
+            '我们应如何评论此新闻?',
+            '网友如何评价这一事件?',
+        ];
+
+        return array_merge($waitMix, $commonPrefix);
     }
 }
