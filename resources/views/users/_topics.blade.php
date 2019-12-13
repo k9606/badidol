@@ -6,7 +6,7 @@
                 @foreach ($topics as $topic)
                     <li>
                         <a href="{{ $topic->link() }}" class="jie-title"> {{ $topic->title }}</a>
-                        <i>{{ $topic->created_at }}</i>
+                        <i>{{ $topic->created_at->diffForHumans() }}</i>
                         <em class="layui-hide-xs">{{ $topic->reply_count }} 回复</em>
                     </li>
                 @endforeach

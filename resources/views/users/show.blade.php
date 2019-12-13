@@ -8,15 +8,15 @@
         <i class="iconfont icon-renzheng" title="社区认证"></i>
         <h1>
             {{ $user->name }}
-            <i class="iconfont icon-nan"></i>
+            <i class="iconfont icon-lianjie"></i>
             <!-- <i class="iconfont icon-nv"></i>  -->
         </h1>
 
         <p style="padding: 10px 0; color: #5FB878;">{{ $user->email }}</p>
 
         <p class="fly-home-info">
-            <i class="layui-icon">&#xe60e;</i><span>注册于 {{ $user->created_at->diffForHumans() }}</span>
-            <i class="layui-icon">&#xe756;</i><span>最后活跃 {{ $user->last_actived_at->diffForHumans() }}</span>
+            <i class="layui-icon">&#xe60e;</i><span>注册于{{ $user->created_at->diffForHumans() }}</span>
+            <i class="layui-icon">&#xe756;</i><span>最后活跃于{{ $user->last_actived_at->diffForHumans() }}</span>
         </p>
 
         <p class="fly-home-sign">{{ $user->introduction }}</p>

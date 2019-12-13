@@ -12,13 +12,17 @@
                 <h1>{{ $topic->title }}</h1>
                 <div class="fly-detail-info">
                     <!-- <span class="layui-badge">审核中</span> -->
-                    <span class="layui-badge layui-bg-green fly-detail-column">动态</span>
+                    <span class="layui-badge-rim"
+                          style="border: 1px solid #5FB878;color: #5FB878;">{{ $topic->category->name }}</span>
+                    {{--                    border: 1px solid #5FB878;--}}
+                    {{--                    background: none;--}}
+                    {{--                    color: #5FB878;--}}
 
-{{--                    <span class="layui-badge" style="background-color: #999;">未结</span>--}}
-{{--                    <!-- <span class="layui-badge" style="background-color: #5FB878;">已结</span> -->--}}
+                    {{--                    <span class="layui-badge" style="background-color: #999;">未结</span>--}}
+                    {{--                    <!-- <span class="layui-badge" style="background-color: #5FB878;">已结</span> -->--}}
 
-{{--                    <span class="layui-badge layui-bg-black">置顶</span>--}}
-{{--                    <span class="layui-badge layui-bg-red">精帖</span>--}}
+                    {{--                    <span class="layui-badge layui-bg-black">置顶</span>--}}
+                    {{--                    <span class="layui-badge layui-bg-red">精帖</span>--}}
 
                     <span class="fly-list-nums">
             <a href="#comment"><i class="iconfont" title="回答">&#xe60c;</i> {{ $topic->reply_count }}</a>
@@ -38,7 +42,8 @@
                         <span>{{ $topic->created_at }}</span>
                     </div>
                     <div class="detail-hits" id="LAY_jieAdmin" data-id="123">
-                        <span style="padding-right: 10px; color: #FF7200">暂无签名</span>
+                        <span
+                            style="padding-right: 10px; color: #FF7200;">{{ mb_substr($topic->user->introduction, 0, 5) . ' ...' }}</span>
                         @can('update', $topic)
                             <span>
                                 <button class="layui-btn layui-btn-xs jie-admin">
@@ -65,7 +70,7 @@
             {{-- 用户回复列表 --}}
             <div class="fly-panel detail-box" id="flyReply">
                 <fieldset class="layui-elem-field layui-field-title" style="text-align: center;">
-                    <legend>回帖</legend>
+                    <legend>回复</legend>
                 </fieldset>
                 @includeWhen(Auth::check(), 'topics._reply_box', ['topic' => $topic])
                 @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])

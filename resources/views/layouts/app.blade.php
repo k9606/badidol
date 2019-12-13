@@ -13,7 +13,7 @@
 
     <title>@yield('title', '坏偶像社区') | {{ setting('site_name', 'BadIdol.com 坏偶像') }}</title>
     <meta name="description" content="@yield('description', setting('seo_description',
-    'BadIdol 坏偶像是一个高品质的粉丝社区，致力于为每位粉丝提供一个讨论偶像、发起提问、获取资讯的创造型社区。'))"/>
+    'BadIdol 坏偶像是一个高品质的粉丝社区, 致力于为每位粉丝提供一个讨论偶像, 发起提问, 获取资讯的创造型论坛.'))"/>
     <meta name="keywords" content="@yield('keyword', setting('seo_keyword',
     'badidol,坏偶像,badidol社区,坏偶像社区,badidol论坛,坏偶像论坛,粉丝,粉丝社区,粉丝论坛'))"/>
 
