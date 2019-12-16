@@ -8,7 +8,7 @@
                 <a href="{{ url('/') }}"><i class="layui-icon">&#xe68e;</i>首页</a>
             </li>
             <li class="layui-nav-item layui-this">
-                <a href="https://github.com/k9606"><i class="layui-icon">&#xe635;</i>代码</a>
+                <a href="https://github.com/badidol/badidol"><i class="layui-icon">&#xe635;</i>代码</a>
             </li>
         </ul>
 

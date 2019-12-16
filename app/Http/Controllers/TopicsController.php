@@ -85,7 +85,7 @@ class TopicsController extends Controller
         // 初始化返回数据，默认是失败的
         $data = [
             'success' => false,
-            'msg' => '上传失败!',
+            'msg' => '上传失败, 必须是小于 2m 的图片',
             'file_path' => ''
         ];
         // 判断是否有上传文件，并赋值给 $file
