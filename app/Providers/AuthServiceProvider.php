@@ -34,7 +34,7 @@ class AuthServiceProvider extends ServiceProvider
 
         \Horizon::auth(function ($request) {
             // 是否是站长
-            return \Auth::user()->hasRole('Founder');
+            return (\Auth::user() && \Auth::user()->hasRole('Founder')) ? true : false;
         });
     }
 }
