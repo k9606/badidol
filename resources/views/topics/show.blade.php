@@ -43,7 +43,7 @@
                     </div>
                     <div class="detail-hits" id="LAY_jieAdmin" data-id="123">
                         <span
-                            style="padding-right: 10px; color: #FF7200;">{{ mb_substr($topic->user->introduction, 0, 5) . ' ...' }}</span>
+                            style="padding-right: 10px; color: #FF7200;">{{ $topic->user->introduction ? mb_substr($topic->user->introduction, 0, 5) . '...' : '暂无简介' }}</span>
                         @can('update', $topic)
                             <span>
                                 <button class="layui-btn layui-btn-xs jie-admin">
