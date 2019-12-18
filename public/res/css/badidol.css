@@ -5,7 +5,7 @@
 
 .bi-logo-right {
     font-size: 32px;
-    color: #c2c2c2;
+    color: grey;
 }
 
 .bi-avatar {
@@ -25,4 +25,27 @@
 
 .reply-simditor .simditor .simditor-body {
     min-height: 100px;
+}
+
+.fly-header {
+    border-top: 4px solid #009688;
+    border-bottom: 0px solid #fff;
+    box-shadow: 0 1px 11px 2px rgba(42, 42, 42, .1);
+    height: 56px;
+}
+
+.layui-bg-black {
+    background-color: #fff !important;
+}
+
+.layui-nav .layui-nav-item a:hover, .layui-nav .layui-this a {
+    color: darkgray;
+}
+
+.layui-nav .layui-nav-item a {
+    color: dimgrey;
+}
+
+a {
+    color: dimgrey;
 }
